@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.6.13)  14 JUN 2026 15:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.6.13)  14 JUN 2026 20:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/Ehsan/OneDrive/Desktop/PDE_PINNs_project/main.tex
-(c:/Users/Ehsan/OneDrive/Desktop/PDE_PINNs_project/main.tex
+**"c:/Users/Ehsan/OneDrive/Desktop/PDE_PROJECT/LaTex part of the project/main.tex"
+(c:/Users/Ehsan/OneDrive/Desktop/PDE_PROJECT/LaTex part of the project/main.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-05-26>
 (C:\Users\Ehsan\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -89,37 +89,43 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 36.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 36.
-<Neural_Network.png, id=1, 334.75063pt x 254.45062pt>
+<Neural_Network.png, id=1, 362.35374pt x 340.27126pt>
 File: Neural_Network.png Graphic file (type png)
 <use Neural_Network.png>
 Package pdftex.def Info: Neural_Network.png  used on input line 44.
-(pdftex.def)             Requested size: 234.8775pt x 178.5413pt.
+(pdftex.def)             Requested size: 187.89914pt x 176.4488pt.
  [1
 
 {C:/Users/Ehsan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Neural_Network.png>]
-<pinn_framework.png, id=15, 512.41437pt x 271.0125pt>
+<pinn_framework.png, id=15, 643.9257pt x 239.2137pt>
 File: pinn_framework.png Graphic file (type png)
 <use pinn_framework.png>
-Package pdftex.def Info: pinn_framework.png  used on input line 94.
-(pdftex.def)             Requested size: 328.82707pt x 173.91469pt.
- [2 <./pinn_framework.png>] [3] [4] (main.aux)
+Package pdftex.def Info: pinn_framework.png  used on input line 93.
+(pdftex.def)             Requested size: 469.75502pt x 174.51503pt.
+ [2 <./pinn_framework.png>] [3] [4]
+<SCH_diagram.png, id=29, 7423.735pt x 2059.695pt>
+File: SCH_diagram.png Graphic file (type png)
+<use SCH_diagram.png>
+Package pdftex.def Info: SCH_diagram.png  used on input line 286.
+(pdftex.def)             Requested size: 469.75502pt x 130.30203pt.
+ [5 <./SCH_diagram.png>] (main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-05-26>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1347 strings out of 467509
- 22690 string characters out of 5408780
+ 1361 strings out of 467509
+ 23113 string characters out of 5408780
  445365 words of memory out of 5000000
- 30619 multiletter control sequences out of 15000+600000
- 632023 words of font info for 54 fonts, out of 8000000 for 9000
+ 30632 multiletter control sequences out of 15000+600000
+ 632364 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,65p,345b,230s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (4 pages, 167204 bytes).
+ 57i,6n,65p,367b,232s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Ehsan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (5 pages, 703958 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
+ 80 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

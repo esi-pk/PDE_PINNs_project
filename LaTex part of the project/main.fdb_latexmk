@@ -1,7 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1781439155.96557 "c:/Users/Ehsan/OneDrive/Desktop/PDE_PINNs_project/main.tex" "main.pdf" "main" 1781439156.71787 0
+["pdflatex"] 1781455346.45458 "c:/Users/Ehsan/OneDrive/Desktop/PDE_PROJECT/LaTex part of the project/main.tex" "main.pdf" "main" 1781455347.23808 2
   "C:/Users/Ehsan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1781386334 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+  "C:/Users/Ehsan/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1781453580 12668 4e786479e3fd4f450aef09480e85d842 ""
   "C:/Users/Ehsan/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1781347868 13367096 bb116b3fa843fd9a36d8173fd3ced4af ""
+  "C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1095.tfm" 993062508 1460 8005ce585ff351dff78998923504da5e ""
   "C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi10.tfm" 1136765053 1528 abec98dbc43e172678c11b3b9031252a ""
   "C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi6.tfm" 1136765053 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -37,11 +39,12 @@
   "C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty" 1780842058 4023 5a4fcfe68d7c6df02f94d7bf578e99fd ""
   "C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1774811737 30909 7dedb28cb21a1e79c47a35a35ae3c507 ""
   "C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/tex/latex/preprint/fullpage.sty" 1369148873 2867 05b418f78b224ec872f5b11081138605 ""
-  "Neural_Network.png" 1781388746 46406 d93cd63d54bf6e8b9dbf20980eaeee17 ""
-  "c:/Users/Ehsan/OneDrive/Desktop/PDE_PINNs_project/main.tex" 1781439154 8999 41a64fd4ef6dc00ca1c1616ec71cd667 ""
-  "main.aux" 1781439156 760 e7f244413d77d96f7a6be30a896835ef "pdflatex"
-  "main.tex" 1781439154 8999 41a64fd4ef6dc00ca1c1616ec71cd667 ""
-  "pinn_framework.png" 1781376149 18049 3fc5e73bea1c08af25247f3ff39292cc ""
+  "Neural_Network.png" 1781453857 111854 b3e540733c6f8ae8aecc7a8cbfcea477 ""
+  "SCH_diagram.png" 1781455133 959357 e6754201d131af204e80db88a59fcc93 ""
+  "c:/Users/Ehsan/OneDrive/Desktop/PDE_PROJECT/LaTex part of the project/main.tex" 1781455345 12261 c3259aad56d0469957382159333d2ebb ""
+  "main.aux" 1781455165 1323 61844f7f3983f22b9c6fe4bfdb3df23a "pdflatex"
+  "main.tex" 1781455345 12261 c3259aad56d0469957382159333d2ebb ""
+  "pinn_framework.png" 1781454642 185149 165ee6e2d21a9fd14a4c4ab7dc911a65 ""
   (generated)
   "main.aux"
   "main.log"

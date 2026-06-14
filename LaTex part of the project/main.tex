@@ -41,7 +41,7 @@ where each $(F_i)$ represents the transformation performed by the $(i)-th$ layer
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=.5\textwidth]{Neural_Network.png}
+    \includegraphics[width=.4\textwidth]{Neural_Network.png}
     \caption{Nerual Network}
     \label{fig:nn}
 \end{figure}
@@ -61,9 +61,9 @@ Here, the neural network is responsible for approximating the unknown solution $
 differentiation is used to calculate the necessary derivatives in the PDE.
 For a general PDE of the form
 
-$$
+\begin{equation}
 u_t + \mathcal{N}[u] = 0
-$$
+\end{equation}
 
 
 
@@ -71,9 +71,9 @@ the neural network predicts the solution $(u(t,x))$. Using automatic differentia
 the derivatives $(u_t), (u_x), (u_{xx})$, and higher-order terms can be computed exactly with respect to the network inputs. 
 These derivatives are then substituted into the governing equation to form a residual function
 
-$$
+\begin{equation}
 f(t,x) = u_t + \mathcal{N}[u].
-$$
+\end{equation}
 
 In case the neural network adheres exactly to the physical law, then the residual 
 (f(t,x)) is supposed to take the value of zero throughout the whole domain. 
@@ -89,9 +89,8 @@ which works as a regularization technique.
 
 
 \begin{figure}[h]
-    
     \centering
-    \includegraphics[width=.7\textwidth]{pinn_framework.png}
+    \includegraphics[width=1\textwidth]{pinn_framework.png}
     \caption{PINN Framework} 
     \label{fig:pinns}
 \end{figure}
@@ -108,8 +107,9 @@ Therefore, each input point can be shown as $(x,t)$. The role of the
 neural network is mapping this input point to the corresponding approximation of the unknown solution. 
 In other words, the network represents the function
 
-$$u_\theta(x,t) \approx u(x,t)$$
-
+\begin{equation}
+u_\theta(x,t) \approx u(x,t)
+\end{equation}
 where $(\theta)$ denotes all trainable parameters of the neural network, including weights and biases[lulu]
 
 In the traditional neural network, the output of the architecture is checked only with available data. However, the output from the architecture in a PINN is
@@ -118,11 +118,11 @@ This means that after the network predicts $u_\theta(x,t)$, automatic differenti
 compute the derivatives required in the PDE, such as
 
 
-$$
+\begin{equation}
 \frac{\partial u_\theta}{\partial t},
 \frac{\partial u_\theta}{\partial x},
 \frac{\partial^2 u_\theta}{\partial x^2}.
-$$
+\end{equation}
 
 [raissi2019.pdf]
 
@@ -166,12 +166,13 @@ ensures that the initial conditions are satisfied. Together,
 these terms guide the network toward a physically meaningful solution.[raissi2019]
 More specifically, the physics loss is often defined as the mean squared value of 
 the PDE residual evaluated at all collocation points:
-$$\frac{1}{N_f}
+\begin{equation}
+frac{1}{N_f}
 \sum_{i=1}^{N_f}
 \left|
 f_\theta(x_f^i,t_f^i)
-\right|^2.
-$$
+\right|^2
+\end{equation}
 
 
 Minimizing this term forces the neural network to satisfy the 
@@ -179,13 +180,13 @@ governing equation throughout the computational domain. Similarly,
 if observational data are available, the data loss can be written as
 
 
-$$
+\begin{equation}
 \frac{1}{N_u}
 \sum_{i=1}^{N_u}
 \left|
 u_\theta(x_u^i,t_u^i)-u^i
 \right|^2,
-$$
+\end{equation}
 
 where $(u^i)$ denotes the observed value of the solution at the point $((x_u^i,t_u^i))$. [raissi2019]
 
@@ -200,11 +201,92 @@ data and satisfies the governing physical laws. [Lu2021]
 
 
 
+\subsection{The Schrödinger Equation and Physics-Informed Neural Networks}
+
+The Schrödinger equation is the fundamental equation of quantum mechanics and 
+describes the evolution of a quantum system through its wave function. In its 
+time-dependent form, the equation is written as
+
+\begin{equation}
+i\hbar \frac{\partial \psi}{\partial t}
+=
+\hat{H}\psi,
+\end{equation}
+
+where $\psi(x,t)$ denotes the wave function, $\hbar$ is the reduced 
+Planck constant, and $\hat{H}$ is the Hamiltonian operator. 
+The solution of the Schrödinger equation contains complete 
+information about the physical system and can be used to 
+determine quantities such as probability distributions and energy levels.
+
+The Schrödinger equation plays a central role in many 
+scientific fields, including quantum mechanics, 
+quantum chemistry, atomic physics, 
+condensed matter physics, and quantum computing. 
+Because analytical solutions are available only for a 
+limited number of simple systems, numerical methods are 
+often required to approximate its solutions.
+
+In recent years, Physics-Informed Neural Networks (PINNs) 
+have emerged as a promising alternative to traditional numerical 
+approaches. By embedding the governing differential 
+equation directly into the loss function, PINNs can learn 
+solutions that satisfy both observational data and the 
+underlying physical laws. This capability makes PINNs particularly
+attractive for solving Schrödinger-type equations, where accurate 
+approximations of wave functions are required. [wang2021.pdf]
+
+\subsection{Problem Statement}
+
+In this project, we consider the one-dimensional time-dependent 
+Schrödinger equation with a harmonic potential
+
+\begin{equation}
+i\frac{\partial \psi}{\partial t}
+=
+-\frac{1}{2}\frac{\partial^2 \psi}{\partial x^2}
++
+\frac{1}{2}x^2\psi,
+\end{equation}
+
+where $\psi(x,t)$ denotes the complex-valued wave function. The term
+
+\begin{equation}
+-\frac{1}{2}\frac{\partial^2 \psi}{\partial x^2}
+\end{equation}
+
+represents the kinetic energy contribution, while
+
+\begin{equation}
+\frac{1}{2}x^2\psi
+\end{equation}
+
+corresponds to the harmonic oscillator potential. 
+This equation is one of the most important models in 
+quantum mechanics and is frequently used as a benchmark 
+problem for numerical and machine learning methods.
+
+To solve this problem using PINNs, the neural 
+network receives the spatial coordinate 
+$x$ and time $t$ as inputs and approximates 
+the wave function $\psi(x,t)$. Automatic d
+ifferentiation is then employed to compute 
+the derivatives required by the governing equation, 
+and the residual of the Schrödinger equation is 
+incorporated into the loss function. The network 
+parameters are optimized such that the predicted 
+solution satisfies both the differential equation 
+and the prescribed initial and boundary conditions.
 
 
+\subsection{Experimetal Setup}
 
-
-
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{SCH_diagram.png}
+    \caption{Diagram of solveing Schr¨odinger with PINN}
+    \label{fig:sch1}
+\end{figure}
 
 
 

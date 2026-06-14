@@ -1,6 +1,6 @@
-PWD c:\Users\Ehsan\OneDrive\Desktop\PDE_PINNs_project
+PWD c:\Users\Ehsan\OneDrive\Desktop\PDE_PROJECT\LaTex part of the project
 INPUT C:\Users\Ehsan\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\Ehsan\OneDrive\Desktop\PDE_PINNs_project\main.tex
+INPUT c:\Users\Ehsan\OneDrive\Desktop\PDE_PROJECT\LaTex part of the project\main.tex
 OUTPUT main.log
 INPUT C:\Users\Ehsan\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\Ehsan\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -67,7 +67,17 @@ INPUT .\pinn_framework.png
 INPUT .\pinn_framework.png
 INPUT .\pinn_framework.png
 INPUT C:\Users\Ehsan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsl10.tfm
+INPUT .\SCH_diagram.png
+INPUT .\SCH_diagram.png
+INPUT .\SCH_diagram.png
+INPUT .\SCH_diagram.png
+INPUT .\SCH_diagram.png
+INPUT .\SCH_diagram.png
+INPUT .\SCH_diagram.png
+INPUT C:\Users\Ehsan\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
 INPUT main.aux
+INPUT C:\Users\Ehsan\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
+INPUT C:\Users\Ehsan\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
 INPUT C:\Users\Ehsan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\Ehsan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\Ehsan\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
