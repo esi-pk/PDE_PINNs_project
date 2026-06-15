@@ -2,7 +2,7 @@
 \parindent 0px 
 \usepackage{fullpage}
 \usepackage{graphicx}
-
+\usepackage{amsmath}
 
 \begin{document}
 
@@ -277,16 +277,221 @@ incorporated into the loss function. The network
 parameters are optimized such that the predicted 
 solution satisfies both the differential equation 
 and the prescribed initial and boundary conditions.
+\subsection{Initial and Boundary Conditions}
+To obtain a unique solution of the Schrödinger equation, 
+appropriate initial and boundary conditions must be specified.
+In this work, the spatial domain is defined as
+
+\begin{equation}
+    x \in [-5,5]
+\end{equation}
 
 
+while the temporal domain is chosen as
+
+\begin{equation}
+    t \in [0,1]
+\end{equation}
+The initial condition is selected as a Gaussian wave packet,
+
+\begin{equation}
+    \psi(x,0)=e^{-x^2}
+\end{equation}
+
+which is a commonly used initial state in quantum mechanics 
+due to its smoothness and localized nature. Since the wave 
+function is represented in terms of its real and imaginary 
+components,
+
+\begin{equation}
+    \psi(x,t)=u(x,t)+iv(x,t)
+\end{equation}
+
+the initial condition can be written as
+
+\begin{equation}
+    u(x,0)=e^{-x^2}
+\end{equation}
+
+
+\begin{equation}
+    v(x,0)=0
+\end{equation}
+
+These conditions are enforced during training through the initial-condition 
+loss term, which penalizes discrepancies between the 
+neural network predictions and the prescribed initial values.
+
+Furthermore, homogeneous Dirichlet boundary conditions are 
+imposed at the boundaries of the spatial domain. 
+Specifically,
+
+\begin{equation}
+    u(-5,t)=u(5,t)=0
+\end{equation}
+
+and
+
+\begin{equation}
+    v(-5,t)=v(5,t)=0
+\end{equation}
+
+
+These boundary conditions ensure that the wave function 
+remains negligible at the edges of the computational domain, 
+which is consistent with the localized nature of the 
+Gaussian initial state.
+
+Within the PINN framework, 
+both the initial and boundary conditions are 
+incorporated directly into the loss function. 
+During training, the neural network is required not 
+only to satisfy the governing Schrödinger equation but 
+also to reproduce the prescribed initial and boundary 
+conditions. This enables the network to learn a physically 
+consistent approximation of the wave function throughout 
+the spatio-temporal domain.
+
+
+
+\subsection{PINN Formulation for the Schrödinger Equation}
+
+\subsection{PINN Formulation for the Schrödinger Equation}
+
+To solve the time-dependent Schrödinger equation using Physics-Informed Neural Networks (PINNs), the complex-valued wave function is first decomposed into its real and imaginary components. Thus, the solution is represented as
+
+\begin{equation}
+\psi(x,t)=u(x,t)+i\,v(x,t)
+\end{equation}
+
+where $u(x,t)$ and $v(x,t)$ denote the real and imaginary parts of the wave function, respectively.
+
+In the PINN framework, a fully connected neural network is employed to approximate these two functions simultaneously. The inputs of the network are the spatial coordinate $x$ and the time variable $t$, while the outputs correspond to the approximations $u_\theta(x,t)$ and $v_\theta(x,t)$, where $\theta$ denotes the trainable parameters of the neural network.
+
+The governing equation considered in this work is
+
+\begin{equation}
+i\frac{\partial \psi}{\partial t}
+=
+-\frac{1}{2}\frac{\partial^2\psi}{\partial x^2}
++
+\frac{1}{2}x^2\psi
+\label{eq:schrodinger}
+\end{equation}
+
+Substituting
+
+\begin{equation}
+\psi=u+i\,v
+\end{equation}
+
+into the Schrödinger equation and separating the real and imaginary parts yields the coupled system
+
+\begin{equation}
+u_t
+=
+-\frac{1}{2}v_{xx}
++
+V(x)v
+\end{equation}
+
+\begin{equation}
+v_t
+=
+\frac{1}{2}u_{xx}
+-
+V(x)u
+\end{equation}
+
+where
+
+\begin{equation}
+V(x)=\frac{1}{2}x^2
+\end{equation}
+
+is the harmonic potential.
+
+Using automatic differentiation, the neural network computes the required derivatives $u_t$, $v_t$, $u_{xx}$, and $v_{xx}$. These derivatives are then used to construct the physics residuals
+
+\begin{equation}
+f_u
+=
+u_t
++
+\frac{1}{2}v_{xx}
+-
+V(x)v
+\end{equation}
+
+\begin{equation}
+f_v
+=
+v_t
+-
+\frac{1}{2}u_{xx}
++
+V(x)u
+\end{equation}
+
+If the neural network exactly satisfies the Schrödinger equation, both residual functions vanish throughout the computational domain. Therefore, the objective of the PINN is to minimize these residuals while simultaneously satisfying the prescribed initial and boundary conditions.
+
+To enforce the governing equation, a set of collocation points is sampled inside the spatio-temporal domain. At these points, the residuals $f_u$ and $f_v$ are evaluated and incorporated into the loss function. The resulting physics loss is given by
+
+\begin{equation}
+\mathcal{L}_{\mathrm{PDE}}
+=
+\frac{1}{N_f}
+\sum_{i=1}^{N_f}
+\left(
+|f_u(x_i,t_i)|^2
++
+|f_v(x_i,t_i)|^2
+\right)
+\end{equation}
+
+where $N_f$ denotes the number of collocation points.
+
+The total loss function combines the physics loss with the losses associated with the initial conditions, boundary conditions, and available reference data. Therefore,
+
+\begin{equation}
+\mathcal{L}
+=
+\lambda_{\mathrm{PDE}}\mathcal{L}_{\mathrm{PDE}}
++
+\lambda_{\mathrm{IC}}\mathcal{L}_{\mathrm{IC}}
++
+\lambda_{\mathrm{BC}}\mathcal{L}_{\mathrm{BC}}
++
+\lambda_{\mathrm{Data}}\mathcal{L}_{\mathrm{Data}}
+\end{equation}
+
+where the coefficients $\lambda_{\mathrm{PDE}}$, $\lambda_{\mathrm{IC}}$, $\lambda_{\mathrm{BC}}$, and $\lambda_{\mathrm{Data}}$ control the contribution of each component during training.
 \subsection{Experimetal Setup}
+
+The Physics-Informed Neural Network used in this work is implemented as a fully connected feed-forward neural network. The input layer receives the spatial coordinate $x$ and the time variable $t$, while the output layer predicts the real and imaginary components of the wave function, $u_\theta(x,t)$ and $v_\theta(x,t)$. Consequently, the network has two input neurons and two output neurons.
+
+To approximate the solution of the Schrödinger equation, the network consists of four hidden layers with 64 neurons in each layer. The hyperbolic tangent ($\tanh$) activation function is employed throughout the hidden layers. This activation function is commonly used in PINN applications because it is smooth, differentiable, and well suited for automatic differentiation. The network weights are initialized using the Glorot normal initialization method, which helps stabilize the training process and improves convergence.
+
+During training, collocation points are sampled throughout the computational domain to enforce the governing differential equation. Additional points are selected on the initial surface and domain boundaries to impose the prescribed initial and boundary conditions. Furthermore, reference solution data are incorporated into the training process to improve the accuracy of the learned solution.
+
+The training procedure begins with a forward pass through the neural network. Given an input pair $(x,t)$, the network predicts the corresponding values of $u_\theta(x,t)$ and $v_\theta(x,t)$. Automatic differentiation is then used to compute the required derivatives appearing in the Schrödinger equation, including $u_t$, $v_t$, $u_{xx}$, and $v_{xx}$. These derivatives are subsequently used to evaluate the PDE residuals and the corresponding loss terms.
+
+The total loss function is obtained by combining the physics loss, initial-condition loss, boundary-condition loss, and data loss. Backpropagation is then employed to compute the gradients of the loss function with respect to the trainable parameters of the network. These gradients are used to iteratively update the weights and biases until the network converges to a satisfactory solution.
+
+To optimize the network parameters, a two-stage training strategy is adopted. In the first stage, the Adam optimizer is used to rapidly explore the parameter space and obtain a reasonable approximation of the solution. Adam is particularly effective during the early stages of training because of its adaptive learning-rate mechanism. In the second stage, the L-BFGS optimizer is employed to further refine the solution and improve convergence. This hybrid optimization strategy is widely used in PINN applications because it combines the robustness of Adam with the high-accuracy convergence properties of L-BFGS.
+
+After training is completed, the resulting neural network provides an approximation of the wave function throughout the entire spatio-temporal domain. The accuracy of the learned solution is assessed by comparing the PINN predictions with the reference numerical solution and evaluating the relative $L_2$ error.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=1\textwidth]{SCH_diagram.png}
-    \caption{Diagram of solveing Schr¨odinger with PINN}
+    \caption{Diagram of solving Schrodinger with PINN}
     \label{fig:sch1}
 \end{figure}
+
+
+
+
 
 
 
