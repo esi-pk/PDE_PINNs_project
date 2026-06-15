@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+
+\usepackage{hyperref}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+
+
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.15]{images/IUST_Logo.jpg} \\
+				\caption*{\textbf{School of Mathematics \& Computer Science}}
+			\end{figure}
+			\vspace*{0.5cm}
+			\Huge{\textbf{Comparison of \\ Numerical Methods and PINNs \\ for the Schrödinger equation}}\\
+			\vspace*{3cm}
+			\large{\textbf{Mohsen Peykanro}}\\
+			\large{\textbf{Ehsan Pichka}}\\
+			\large{\textbf{Arshia Soleymani}}\\
+			\vspace*{3cm}
+			\large{\textbf{Advisor:}}\\
+			\large{\textbf{Dr. Mahboubeh Molavi Arabshahi}}\\
+			\vspace*{3cm}
+			\today
+		\end{center}
+	\end{titlepage}
+	
+\section{Introduction}
+\subsection{Background}
+The Schrödinger equation is a partial differential equation in quantum mechanics that describes how the quantum state of a physical system change over time. This equation can handle the behavior of particles at the microscopic level. This equation have two forms that are based on times. The time-dependent Schrödinger equation describes the change of a system's wave function over time, while the time-independent version is used to determine stationary states and energy levels.
+
+In most cases, you cant solve the equation so the exact analytical solutions are not available, especially for complex potentials or higher-dimensional systems. As a result, numerical methods play a crucial role in approximating solutions. The solution to the Schrödinger equation is called the wave function that provides information about the probability distribution of a particle's position and momentum. We mostly are going to survey Classical numerical approaches and Physics-Informed Neural Networks (PINNs) in this article.
+
+The Classical numerical approaches such as the finite difference method (FDM) and finite element method (FEM) have been widely used for solving partial differential equations like Schrödinger equation. These methods rely on discretization of the domain and typically require careful handling of stability, convergence, and computational cost. On the other hand in recent years, PINNs have appeard as a modern approach for solving differential equations. PINNs merge the physical laws directly into the loss function of a neural network, so the solution will be approximated without discretization of the domain. This makes PINNs usefull for complex and high-dimensional problems.
+
+\subsection{Objective of the Study}
+The main objective of this paper is to compare classical numerical methods and Physics-Informed Neural Networks in solving the Schrödinger equation. Despite the growing interest in PINNs, we are not quite sure that how they compare to classical numerical methods in terms of accuracy, efficiency, and stability. A systematic comparison is necessary to evaluate their strengths and limitations.
+
+\section{Mathematical Formulation}
+\subsection{The Schrödinger equation}
+The Schrödinger equation is a direct consequence of the discovery of quanta in the early 20th century. Its origins lie in the energy quanta hypothesis proposed by Max Planck in 1900 and the photon hypothesis by Albert Einstein in 1905, which established that energy and momentum are quantized.
+$$ E = h \nu = \hbar \omega $$
+where $E$ denotes energy, $h$ is the Plnack constant and $\nu$ is frequency of light. so now we can define the reduced Planck constant as $\hbar = \frac{h}{2 \pi}$ and $\omega = 2 \pi \nu$ as angular frequency. 
+Later on, Einstein in 1917 concluded that momentum of light quantum $p$ is:
+$$ p = \frac{E}{c} = \frac{\hbar \omega}{c} = \hbar k $$
+$k$ is called wavenumber and is defind as $ k = 2 \pi \lambda$, where $\lambda$ is wavelength of light in vacuum.
+
+In 1923, Louis de Broglie extended these ideas by theorizing that matter possesses both corpuscular and wave natures, known as wave-particle duality
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\break
+\begin{thebibliography}{99}
+
+\end{thebibliography}	
+\end{document}
