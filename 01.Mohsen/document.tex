@@ -1,7 +1,11 @@
 \documentclass[12pt]{article}
 \usepackage[a4paper, margin=1in]{geometry}
 
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+}
 \usepackage{amsfonts, amsmath, amssymb, amsthm}
 \usepackage{graphicx}
 \usepackage{subfigure}
@@ -63,6 +67,13 @@ In 1923, Arthur Compton conducted experiments investigating how incident X-ray b
 \end{equation} 
 where $\Delta \lambda$ means a Shift in wave length of scatterd beam, $m_e$ is a rest mass of an electron (mass that is independent of the motion of the particle) and $\theta$ is a scatering angle of the beam. The constant $\frac{h}{m_e c} $ is defined as the electron Compton wavelength ( $\lambda_e$) approximately $ 2.426 \times 10^{-12} $ meters.
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[height=5cm]{images/Fig5}
+	\caption{Compton eﬀect: scattering of a photon on a resting electron}
+\end{figure}
+
+
 In 1924, Louis de Broglie Encouraged by the success of Einstein and Compton in proving that waves (light) could behave like particles and theorized that the reverse must also be true, in other word matter particles must possess a wave nature. De Broglie essentially reversed the relationship of (\ref{eq:1905}) and (\ref{eq:1917}) such that
 \begin{equation}
 	\omega = \frac{E}{\hbar}, \quad k = \frac{p}{\hbar} \quad \text{or} \quad \lambda = \frac{h}{p}
@@ -76,7 +87,7 @@ For a matter wave, the phase velocity $v_p$ is shown to be greater than $c$, whi
 	\caption{Phase velocity vs Group velocity}
 \end{figure}
 
-\subsection{Schrödinger Equation}
+\subsection{Time-Dependent Schrödinger Equation}
 The derivation starts with the standard wave equation 
 \begin{equation}
 	\nabla^2 \Psi = \frac{1}{v^2} \frac{\partial^2 \Psi}{\partial t^2}
@@ -88,8 +99,8 @@ where $\Psi$ is an arbitrary function of a physical quantity relevant to propaga
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=7cm]{images/Fig3}
-	\includegraphics[width=7cm]{images/Fig4}
+	\includegraphics[width=7.5cm]{images/Fig3}
+	\includegraphics[width=7.5cm]{images/Fig4}
 	\caption{Plane waves in two and three dimensions}
 \end{figure}
 
@@ -139,7 +150,7 @@ Comparing these equations we find out that momentum $p$ becomes the operator $ \
 	E = \frac{p^2}{2m} + V
 \end{equation}
 So now lets rewrite the equation (\ref{eq:15})
-\begin{equation}
+\begin{equation} \label{eq:TDSE}
 	i \hbar \frac{\partial \Psi}{\partial t} + \frac{\hbar ^ 2}{2m} \nabla^2 \Psi = V \Psi \quad \Rightarrow \quad
 	(- \frac{\hbar ^ 2}{2m} \nabla^2 + V) \Psi = i \hbar \frac{\partial \Psi}{\partial t}
 \end{equation}
@@ -153,6 +164,33 @@ Then we have a shorthand representation such that
 \begin{equation}
 	H \Psi = i \hbar \frac{\partial \Psi}{\partial t}
 \end{equation}
+\subsection{Time-Independent Schrödinger Equation}
+In (\ref{eq:TDSE}) $\Psi$ is a function of $x$ and $t$. Suppose that a potential $V$ depends only upon $x$ and seperation of variables can be done with $\Psi$ function ($\Psi(x,t) = \phi(x) \xi(t)$). By substituting these functions into the Time-Dependent Schrödinger Equation, we have
+\begin{equation}
+	- \frac{\hbar^2}{2m} \nabla^2 \phi(x) \xi(t) + V(x) \phi(x) \xi(t) = i \hbar \phi(x) \frac{\partial \xi(t)}{\partial t}
+\end{equation}
+Now we will dividing the entire equation by $\phi(x) \xi(t)$
+\begin{equation}
+	\frac{- \frac{\hbar^2}{2m} \nabla^2 \phi(x)}{\phi(x)} + V(x)  = \frac{i \hbar \frac{\partial \xi(t)}{\partial t}}{\xi(t)}
+\end{equation}
+Since now the left hand side is only dependent on $x$ and the right hand side only on $t$, both sides must be equal to a constant, which is defined as the total energy$E$, and we can now solve each side independently
+\begin{equation}\label{eq:TISE}
+	H \phi(x) = E \phi(x)
+\end{equation}
+\begin{equation}
+	\begin{aligned}
+	& i \hbar \frac{\partial \xi(t)}{\partial t} = E \, \xi(t) 
+	\quad \Rightarrow \quad \frac{d \xi(t)}{\xi(t)} = \frac{E}{i \hbar} \, dt 
+	\quad \Rightarrow \quad \int \frac{d \xi}{\xi} = \frac{E}{i \hbar} \int dt \\
+	& \quad \Rightarrow \quad \ln \frac{\xi(t)}{\xi(0)} = \frac{E t}{i \hbar} 
+	\quad \Rightarrow \quad \xi(t) = \xi(0)\, \exp\!\left(-\frac{iEt}{\hbar}\right)
+\end{aligned}
+\end{equation}
+The Time-Independent Schrödinger Equation (TISE)(\ref{eq:TISE}), is an eigenvalue problem where $E$ represents the energy eigenvalues and $\phi(x)$ represents the eigenfunctions (or stationary states) of the Hamiltonian operator. After solving the problem, we get a solution
+\begin{equation}
+	\Psi(x,t) = \phi(x) \exp\!\left(-\frac{iEt}{\hbar}\right)
+\end{equation}
+
 
 
 
