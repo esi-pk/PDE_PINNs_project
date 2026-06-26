@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage[a4paper, margin=1in]{geometry}
 
 \usepackage[hidelinks]{hyperref}
@@ -83,7 +83,7 @@ where $p$ equals $|p|$ and $\lambda$ is a wavelength of a corpuscular beam(a dir
 For a matter wave, the phase velocity $v_p$ is shown to be greater than $c$, while the group velocity $v_g$, which represents the propagation velocity of a wave packet (and thus the particle's velocity), is less than $c$. Their relationship is defined by $v_p v_g = c^2$. Therefore, a particle velocity must not exceed $c$.
 \begin{figure}[h!]
 	\centering
-	\includegraphics[height=6cm]{images/Fig2}
+	\includegraphics[height=5cm]{images/Fig2}
 	\caption{Phase velocity vs Group velocity}
 \end{figure}
 
@@ -164,6 +164,12 @@ Then we have a shorthand representation such that
 \begin{equation}
 	H \Psi = i \hbar \frac{\partial \Psi}{\partial t}
 \end{equation}
+Since we want to associate the wave function with a single particle, it is reasonable to require the probability to find the electron anywhere in space to be exactly equal to one. Since this may not be the case for all $\Psi$, we introduce a normalization condition:
+\begin{equation}
+	\int_{- \infty}^{\infty} | \Psi (x,t) |^2 dx = 1
+\end{equation}
+The normalization thus imposes a condition on the wave function, the wave function must be a square integrable function.
+
 \subsection{Time-Independent Schrödinger Equation}
 In (\ref{eq:TDSE}) $\Psi$ is a function of $x$ and $t$. Suppose that a potential $V$ depends only upon $x$ and seperation of variables can be done with $\Psi$ function ($\Psi(x,t) = \phi(x) \xi(t)$). By substituting these functions into the Time-Dependent Schrödinger Equation, we have
 \begin{equation}
@@ -190,6 +196,123 @@ The Time-Independent Schrödinger Equation (TISE)(\ref{eq:TISE}), is an eigenval
 \begin{equation}
 	\Psi(x,t) = \phi(x) \exp\!\left(-\frac{iEt}{\hbar}\right)
 \end{equation}
+
+\section{Classical numerical methods for Schrödinger equation}
+Classical numerical methods for solving the Schrödinger equation work by turning a continuous problem into a form that can be handled by a computer. Some common methods include finite difference and finite element methods, which divide space into small pieces and approximate derivatives. Spectral methods, such as Fourier, Chebyshev, and B-spline methods, instead represent the solution using combinations of known functions. Other useful approaches include the split-step Fourier method and the Crank–Nicolson method, which are often used to simulate how a system changes over time. Monte Carlo methods can also be used, especially for more complex or higher-dimensional problems.
+
+For time-dependent Schrödinger equations, methods like Crank–Nicolson, implicit–explicit schemes, and operator splitting are popular because they are stable and work well for step-by-step time evolution. On the other hand, time-independent problems are usually solved using matrix diagonalization, variational methods, or Monte Carlo techniques to find energy levels and corresponding wave functions.
+
+\subsection{Finite Difference Methods}
+Finite Difference Methods (FDM) are numerical techniques used to approximate solutions to differential equations by discretizing the equations in both time and space. The continuous derivatives in the equations are replaced with finite difference approximations, which transform the problem into a system of algebraic equations that can be solved computationally. FDM is widely used to solve both time-dependent and time-independent forms of the Schrödinger equation.
+
+Discretizing the domain transforms the continuous space and time where the wave function $\Psi (x,t)$ exists into a finite set of specific points called a mesh or grid, because computers cannot handle an infinite continuum of points.
+
+The spatial domain is divided into equally spaced grid points defined as 
+\begin{equation}
+	x_j = j \Delta x \; ; \quad j = 0, 1, 2, \cdots , N
+\end{equation}
+where $\Delta x$ is the spatial step size and determines the resolution of the numerical approximation, with smaller values generally leading to higher accuracy at the expence of increased computaional cost.
+
+Similarly, the time domain is divided into discrete time levels. The time points are defined as 
+\begin{equation}
+	t_n = n \Delta t \; ; \quad n = 0, 1, 2, \cdots
+\end{equation}
+where $\Delta t$ is the time step size and used to evolve the solution from one moment to the next.
+
+After discretization, the continuous wave function $\Psi (x,t)$ is replaced by discrete values evaluated at the grid points. The value of the wave function at position $x_j$ and time $t_n$ is denoted by
+\begin{equation}
+	\Psi_j^n \approx \Psi (x_j, t_n)
+\end{equation}
+At any time step $n$ the entire spatial state can be treated as a vector 
+\begin{equation}
+	U^n = \begin{pmatrix} \Psi_0^n \\ \Psi_1^n \\ \vdots \\ \Psi_N^n \end{pmatrix}
+\end{equation}
+which represents the numerical state of the system at that particular time.
+
+After discretizing the computational domain, the next step in the finite difference method is to approximate the derivatives appearing in the Schrödinger equation. Since numerical algorithms cannot directly evaluate continuous derivatives, these derivatives are replaced by algebraic expressions involving values of the wave function at neighboring grid points. This transformation converts the differential equation into a system of algebraic equations that can be solved using a computer.
+
+The kinetic energy term in the Schrödinger equation contains the second spatial derivative of the wave function. A commonly used approximation is the second-order centered finite difference formula
+\begin{equation}
+	\frac{\partial^2 \Psi}{\partial x^2} \approx \frac{\Psi_{j+1}^n - 2 \Psi_j^n + \Psi_{j-1}^n}{\Delta x^2}
+\end{equation}
+This approximation is second-order accurate, meaning that the truncation error is proportional to $O(\Delta x^2)$. As a resault, reducing the grid spacing improves the accuracy of the numerical solution.
+
+The time derivative of the wave function can also be approximated using finite differences. One of the simplest approximations is the forward difference scheme
+\begin{equation}
+	\frac{\partial \Psi }{\partial t} \approx \frac{\Psi_j^{n+1} - \Psi_j^n}{\Delta t}
+\end{equation}
+For improved accuracy, central difference approximations may be employed. In this case, the derivative is approximated by
+\begin{equation}
+	\frac{\partial \Psi }{\partial t} \approx \frac{\Psi_j^{n+1} - \Psi_j^{n-1}}{2 \Delta t}
+\end{equation}
+
+After discretization and derivative approximation, the finite difference equations must be solved using an appropriate numerical strategy. Several implementation techniques have been developed depending on the type of Schrödinger equation being considered and the desired numerical properties, such as stability, efficiency, and accuracy.
+
+\begin{itemize}
+	\item 
+	The Method of Lines (MoL):
+\end{itemize}
+In this method, only the spatial derivatives(the Laplacian) are discretized using finite differences, while the time variable remains continuous. As a result, the Schrödinger equation is transformed into a system of coupled ordinary differential equations (ODEs) where $\hbar = m = 1$
+\begin{equation}
+	 \frac{d \Psi}{dt} = \frac{i}{2} \left[ \frac{\Psi_{j+1}^n - 2 \Psi_j^n + \Psi_{j-1}^n}{\Delta x^2} \right] - i V \Psi(t) \quad \Rightarrow \quad
+	 \frac{d \Psi}{dt} = S(\Psi)
+\end{equation}
+Time evolution is then performed using an explicit third-order Runge–Kutta (RK3) scheme:
+\begin{equation}
+	k_1 = \Delta t S(\Psi ^n), \quad 
+	k_2 = \Delta t S(\Psi ^n + \frac{1}{2} k_1), \quad 
+	k_3 = \Delta t S(\Psi ^n + \frac{1}{2} k_2)
+\end{equation}
+\begin{equation}
+	\Psi^{n+1} = \Psi^n + \frac{1}{6} k_1 +  \frac{2}{3} k_2 + \frac{1}{6} k_3
+\end{equation}
+
+\begin{itemize}
+	\item 
+	Imaginary Time Evolution (Wick Rotation):
+\end{itemize}
+Imaginary Time Evolution is a numerical technique commonly used to compute the stationary states of the Schrödinger equation, particularly the ground state. The method is based on the substitution $\tau = it$ where $t$ is the real time and $\tau$ is the imaginary time. This transformation, often referred to as a Wick rotation, converts the time-dependent Schrödinger equation into a diffusion-type equation (a partial differential equation that describes how a physical quantity spreads or smooths out over time due to diffusion-like processes: $\frac{\partial u}{\partial t} = D \nabla^2 u$).
+\begin{equation}
+	\frac{\partial}{\partial t} = i \frac{\partial}{\partial \tau} \quad \Rightarrow \quad
+	\frac{\partial \Psi}{\partial \tau} = \frac{\hbar}{2m} \nabla^2 \Psi - \frac{V}{\hbar} \Psi 
+\end{equation}
+Notice that this has the same structure as the diffusion equation. The Laplacian causes the wavefunction to become smoother over imaginary time, while the potential term acts as a source or sink.
+
+If the initial wave function is expressed as a linear combination of the eigenfunctions of the Hamiltonian we have
+\begin{equation}
+	\Psi(x, \tau) = \sum_{n} c_n \phi_n (x) e^{-E_n \tau}
+\end{equation}
+where $\phi_n(x)$ are the eigenfunctions, $E_n$ are the corresponding energy eigenvalues, and $c_n$ are expansion coefficients, each component decays exponentially as the imaginary time increases. As $ \tau \to \infty $, $e^{-(E_n - E_0) \tau} \to 0$ for $n > 0$. so only the ground state remains $\Psi (\tau) \approx c_0 \phi_0 e^{E_0 \tau}$
+
+\begin{itemize}
+	\item 
+	Boundary Management:
+\end{itemize}
+For a finite computational domain $\Omega = [a,b]$, Dirichlet boundary conditions impose homogeneous constraints on the wave function $\Psi(a,t) = \Psi(b,t) = 0$. his corresponds to an infinite potential barrier outside $\Omega$, i.e.
+\begin{equation}
+	V(x) = 
+	\begin{cases} 
+		V(x) & \text{if } x \in \Omega \\
+		\infty & \text{if } x \notin \Omega 
+	\end{cases}
+\end{equation}
+To prevent waves from reflecting off the grid edges back into the simulation, an imaginary potential $\mathfrak{Im}(V)$ is added to the Hamiltonian and modifies the continuity equation for probability density $\rho = \Psi \Psi^* = |\Psi|^2$. If $\mathfrak{Im}(V)$ is negative, it acts as a sink, causing the probability density to decay as it enters the sponge region.
+\begin{equation}
+	\frac{\partial \rho}{\partial t} + \nabla \cdot J = 2 \rho \mathfrak{Im}(V)
+\end{equation}
+A typical smooth absorber is constructed using a hyperbolic tangent profile:
+\begin{equation}
+	\mathfrak{Im}(V) = - \frac{1}{2} V_0 \left\{ 2 + \tanh \left( \frac{(r - r_c)}{\delta}  \right) - \tanh (\frac{r_c}{\delta}) \right\}
+\end{equation}
+ where $V_0$ is the depth of the well, $r_c$ is the radius where the sponge starts, and $\delta$ is the transition width
+
+For unbounded domains (infinite space), non-local boundary conditions allow waves to exit the domain as if the grid were infinite. These conditions are non-local in time, meaning the value at the boundary at time $t$ depends on the history of the wave function at that point. For a potential $V_-$ outside the boundary at $x=0$, the boundary condition takes the form
+\begin{equation}
+	\partial_x \Psi(0,t) = \sqrt{\frac{2}{\pi}} e^{-i\pi/4} e^{-iV_- t} \frac{d}{dt} \int_0^t \frac{\Psi(0,\tau)e^{iV_- \tau}}{\sqrt{t-\tau}}\, d\tau.
+\end{equation}
+
+
+
 
 
 
