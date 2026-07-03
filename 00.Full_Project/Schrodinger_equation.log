@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.29)  4 JUL 2026 00:10
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.29)  4 JUL 2026 00:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**document.tex
-(./document.tex
+**Schrodinger_equation.tex
+(./Schrodinger_equation.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -370,8 +370,8 @@ File: l3backend-xetex.def 2024-02-20 L3 backend support: XeTeX
 \g__pdf_backend_annotation_int=\count295
 \g__pdf_backend_link_int=\count296
 )
-(./document.aux)
-\openout1 = `document.aux'.
+(./Schrodinger_equation.aux)
+\openout1 = `Schrodinger_equation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
@@ -384,7 +384,8 @@ LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
 8.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 18.
@@ -444,9 +445,9 @@ Package color Info: Driver file: xetex.def on input line 149.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx))
 Package hyperref Info: Link coloring ON on input line 18.
 
-(./document.out) (./document.out)
+(./Schrodinger_equation.out) (./Schrodinger_equation.out)
 \@outlinefile=\write3
-\openout3 = `document.out'.
+\openout3 = `Schrodinger_equation.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -482,21 +483,31 @@ LaTeX Font Info:    Trying to load font information for U+euf on input line 302
 .
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [7] [8] [9] [10] (./document.aux)
+) [7] [8] [9] [10]
+File: images/Neural_Network.png Graphic file (type bmp)
+<images/Neural_Network.png>
+ [11]
+File: images/pinn_framework.png Graphic file (type bmp)
+<images/pinn_framework.png>
+ [12] [13] [14] [15] [16]
+File: images/SCH_diagram.png Graphic file (type bmp)
+<images/SCH_diagram.png>
+ [17] [18]
+(./Schrodinger_equation.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: CD36AC3F26677F885F48C64FFF443981;2963.
+Package rerunfilecheck Info: File `Schrodinger_equation.out' has not changed.
+(rerunfilecheck)             Checksum: 01EF582548A860C9039F8BA1B7D6E8EF;4606.
  ) 
 Here is how much of TeX's memory you used:
- 11854 strings out of 474773
- 187894 string characters out of 5757724
+ 11899 strings out of 474773
+ 189248 string characters out of 5757724
  1935839 words of memory out of 5000000
- 33848 multiletter control sequences out of 15000+600000
- 564802 words of font info for 72 fonts, out of 8000000 for 9000
+ 33884 multiletter control sequences out of 15000+600000
+ 564826 words of font info for 75 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,13n,79p,716b,472s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,13n,79p,728b,472s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on document.pdf (11 pages).
+Output written on Schrodinger_equation.pdf (19 pages).
