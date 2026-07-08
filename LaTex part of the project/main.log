@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.6.13)  15 JUN 2026 14:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.6.13)  8 JUL 2026 18:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -185,7 +185,7 @@ File: pinn_framework.png Graphic file (type png)
 Package pdftex.def Info: pinn_framework.png  used on input line 93.
 (pdftex.def)             Requested size: 469.75502pt x 174.51503pt.
  [2 <./pinn_framework.png>] [3] [4] [5]
-Overfull \hbox (4.6542pt too wide) in paragraph at lines 361--362
+Overfull \hbox (4.6542pt too wide) in paragraph at lines 360--363
 \OT1/cmr/m/n/10.95 To solve the time-dependent Schr^^?odinger equa-tion us-ing Physics-Informed Neu-ral Net-works (PINNs),
  []
 
@@ -193,26 +193,38 @@ Overfull \hbox (4.6542pt too wide) in paragraph at lines 361--362
 <SCH_diagram.png, id=40, 7423.735pt x 2059.695pt>
 File: SCH_diagram.png Graphic file (type png)
 <use SCH_diagram.png>
-Package pdftex.def Info: SCH_diagram.png  used on input line 487.
+Package pdftex.def Info: SCH_diagram.png  used on input line 488.
 (pdftex.def)             Requested size: 469.75502pt x 130.30203pt.
- [8 <./SCH_diagram.png>] (main.aux)
+ [8 <./SCH_diagram.png>]
+<surface_density.png, id=45, 359.9046pt x 367.1316pt>
+File: surface_density.png Graphic file (type png)
+<use surface_density.png>
+Package pdftex.def Info: surface_density.png  used on input line 516.
+(pdftex.def)             Requested size: 352.31625pt x 359.41678pt.
+ [9 <./surface_density.png>]
+<selected_times.png, id=50, 504.4446pt x 339.669pt>
+File: selected_times.png Graphic file (type png)
+<use selected_times.png>
+Package pdftex.def Info: selected_times.png  used on input line 525.
+(pdftex.def)             Requested size: 352.31625pt x 237.23283pt.
+ [10 <./selected_times.png>] (main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-05-26>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 2652 strings out of 467509
- 43579 string characters out of 5408780
- 459409 words of memory out of 5000000
- 31873 multiletter control sequences out of 15000+600000
+ 2670 strings out of 467509
+ 44037 string characters out of 5408780
+ 459456 words of memory out of 5000000
+ 31891 multiletter control sequences out of 15000+600000
  633401 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,6n,67p,716b,239s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl8.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (8 pages, 800834 bytes).
+Output written on main.pdf (10 pages, 928388 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
+ 101 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

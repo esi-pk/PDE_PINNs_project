@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1781520644.11699 "c:/Users/Ehsan/OneDrive/Desktop/PDE_PROJECT/LaTex part of the project/main.tex" "main.pdf" "main" 1781520646.09927 0
+["pdflatex"] 1783523387.06027 "c:/Users/Ehsan/OneDrive/Desktop/PDE_PROJECT/LaTex part of the project/main.tex" "main.pdf" "main" 1783523389.32364 0
   "C:/Users/Ehsan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1781517075 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Ehsan/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1781347868 13367096 bb116b3fa843fd9a36d8173fd3ced4af ""
   "C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -57,10 +57,12 @@
   "C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/tex/latex/preprint/fullpage.sty" 1369148873 2867 05b418f78b224ec872f5b11081138605 ""
   "Neural_Network.png" 1781456681 217749 4ecff12eba0643e7407459bd1db31c9f ""
   "SCH_diagram.png" 1781455133 959357 e6754201d131af204e80db88a59fcc93 ""
-  "c:/Users/Ehsan/OneDrive/Desktop/PDE_PROJECT/LaTex part of the project/main.tex" 1781520641 20665 5dfdb0f41bc50da44c3b910613184b09 ""
-  "main.aux" 1781520645 1774 a0af619700546320caa7aaf7ddacdea5 "pdflatex"
-  "main.tex" 1781520641 20665 5dfdb0f41bc50da44c3b910613184b09 ""
+  "c:/Users/Ehsan/OneDrive/Desktop/PDE_PROJECT/LaTex part of the project/main.tex" 1783523383 24879 a8512a9062a62bb36b8fdbe43901abc1 ""
+  "main.aux" 1783523389 2535 04c36e239faf4a4c1967807ead2e2e46 "pdflatex"
+  "main.tex" 1783523383 24879 a8512a9062a62bb36b8fdbe43901abc1 ""
   "pinn_framework.png" 1781454642 185149 165ee6e2d21a9fd14a4c4ab7dc911a65 ""
+  "selected_times.png" 1783523200 46792 e2a87edc80137206ad438e90acf58214 ""
+  "surface_density.png" 1783523171 95966 33069f09c7c1e55b84e2d67557f8d206 ""
   (generated)
   "main.aux"
   "main.log"

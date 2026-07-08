@@ -356,9 +356,10 @@ the spatio-temporal domain.
 
 \subsection{PINN Formulation for the Schrödinger Equation}
 
-\subsection{PINN Formulation for the Schrödinger Equation}
 
-To solve the time-dependent Schrödinger equation using Physics-Informed Neural Networks (PINNs), the complex-valued wave function is first decomposed into its real and imaginary components. Thus, the solution is represented as
+To solve the time-dependent Schrödinger equation using Physics-Informed Neural Networks (PINNs), 
+the complex-valued wave function is first decomposed into its real and imaginary components. 
+Thus, the solution is represented as
 
 \begin{equation}
 \psi(x,t)=u(x,t)+i\,v(x,t)
@@ -490,6 +491,51 @@ After training is completed, the resulting neural network provides an approximat
 \end{figure}
 
 
+\section{Results and Discussion}
+
+This section presents the numerical results obtained using the proposed Physics-Informed Neural Network (PINN) for solving the one-dimensional time-dependent Schrödinger equation with a harmonic potential. The performance of the network is evaluated in terms of the training convergence and the predicted probability density of the wave function.
+
+\subsection{Training Performance}
+
+The network was trained using a two-stage optimization strategy. The Adam optimizer was first employed to obtain a suitable initial approximation of the solution, after which the L-BFGS optimizer was used to further refine the network parameters. This hybrid optimization strategy resulted in rapid convergence and a significant reduction in the overall loss.
+
+After the Adam optimization stage, the total training loss decreased from approximately \(7.40 \times 10^{-3}\) to \(2.99 \times 10^{-6}\) following the L-BFGS optimization stage. The continuous reduction of the loss throughout training indicates that the neural network successfully learned the governing physics while satisfying the prescribed initial and boundary conditions. The final training and testing losses were nearly identical, suggesting that the network generalized well over the computational domain without noticeable overfitting.
+
+\subsection{Probability Density Distribution}
+
+Figure~\ref{fig:surface_density} illustrates the predicted probability density
+
+\[
+|\psi(x,t)|^2,
+\]
+
+over the entire spatio-temporal domain. The solution remains localized around the center of the spatial domain throughout the simulation. As time progresses, the probability density exhibits smooth temporal evolution while maintaining its overall symmetry. The obtained solution is continuous and free of numerical oscillations, demonstrating the capability of the PINN to approximate the solution over the entire computational domain.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{surface_density.png}
+\caption{Surface plot of the predicted probability density \(|\psi(x,t)|^2\).}
+\label{fig:surface_density}
+\end{figure}
+
+To further investigate the temporal evolution of the solution, the probability density was evaluated at several representative time instants, namely \(t=0\), \(0.25\), \(0.50\), \(0.75\), and \(1.00\). As shown in Figure~\ref{fig:selected_times}, the probability density evolves smoothly over time while preserving its symmetric profile about the center of the spatial domain.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{selected_times.png}
+\caption{Probability density \(|\psi(x,t)|^2\) at selected time instants.}
+\label{fig:selected_times}
+\end{figure}
+
+The curves remain smooth and symmetric about \(x=0\), indicating that the physical characteristics of the solution are preserved throughout the simulation. Moreover, the gradual transition between successive time levels demonstrates that the neural network accurately captures the temporal evolution of the wave function without introducing noticeable numerical artifacts.
+
+\subsection{Discussion}
+
+The obtained results demonstrate that the proposed PINN successfully approximates the solution of the one-dimensional time-dependent Schrödinger equation with high accuracy. The low final training loss, together with the smooth probability density distributions, indicates that the neural network satisfies both the governing differential equation and the prescribed initial and boundary conditions.
+
+Furthermore, the predicted probability density exhibits physically consistent behavior throughout the computational domain. The absence of discontinuities and spurious oscillations suggests that automatic differentiation and the physics-informed loss function effectively guide the neural network toward a stable and physically meaningful solution.
+
+Overall, these results confirm that Physics-Informed Neural Networks provide an effective framework for solving the time-dependent Schrödinger equation. By combining observational data with physics-based constraints, the proposed approach accurately reproduces the evolution of the quantum wave function while maintaining numerical stability throughout the simulation.
 
 
 
