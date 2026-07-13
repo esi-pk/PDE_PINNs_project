@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex Schrodinger_equation"] 1783970977.00359 "Schrodinger_equation.aux" "Schrodinger_equation.bbl" "Schrodinger_equation" 1783971089.65947 0
+["bibtex Schrodinger_equation"] 1783971324.40061 "Schrodinger_equation.aux" "Schrodinger_equation.bbl" "Schrodinger_equation" 1783971334.8293 0
   "./references.bib" 1783970540 12238 3a79c5d985a91de48990eeee9802d8b2 ""
   "C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/bibtex/bst/ieeetran/IEEEtran.bst" 1440622569 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "Schrodinger_equation.aux" 1783971089 3552 f7740bfc2cac21291a746438b8d0e5d5 "pdflatex"
+  "Schrodinger_equation.aux" 1783971333 9170 1d729884bca9aebe48e2dfbb2aa78ed4 "pdflatex"
   (generated)
   "Schrodinger_equation.bbl"
   "Schrodinger_equation.blg"
   (rewritten before read)
-["pdflatex"] 1783971084.20811 "c:/Users/Ehsan/OneDrive/Desktop/PDE_PROJECT/00.Full_Project/Schrodinger_equation.tex" "Schrodinger_equation.pdf" "Schrodinger_equation" 1783971089.66183 2
+["pdflatex"] 1783971325.00282 "c:/Users/Ehsan/OneDrive/Desktop/PDE_PROJECT/00.Full_Project/Schrodinger_equation.tex" "Schrodinger_equation.pdf" "Schrodinger_equation" 1783971334.83034 0
   "C:/Users/Ehsan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1783970965 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Ehsan/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1781453580 12668 4e786479e3fd4f450aef09480e85d842 ""
   "C:/Users/Ehsan/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1781347868 13367096 bb116b3fa843fd9a36d8173fd3ced4af ""
@@ -129,9 +129,9 @@
   "C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/tex/latex/subfigure/subfigure.cfg" 1114273570 2114 42ba738bf6f1cec796106a69840777a4 ""
   "C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/tex/latex/subfigure/subfigure.sty" 1114273570 14815 1d3da78e0f66f3c62133fbabffd13cf5 ""
   "C:/Users/Ehsan/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "Schrodinger_equation.aux" 1783971089 3552 f7740bfc2cac21291a746438b8d0e5d5 "pdflatex"
-  "Schrodinger_equation.bbl" 1783970977 11060 ef8785c237b02db608b0d92e1ec06ee5 "bibtex Schrodinger_equation"
-  "Schrodinger_equation.out" 1783971089 1845 2af3753f8372fe850fdf950bb216926b "pdflatex"
+  "Schrodinger_equation.aux" 1783971333 9170 1d729884bca9aebe48e2dfbb2aa78ed4 "pdflatex"
+  "Schrodinger_equation.bbl" 1783971324 11060 ef8785c237b02db608b0d92e1ec06ee5 "bibtex Schrodinger_equation"
+  "Schrodinger_equation.out" 1783971333 2400 d26d775f3eea116b628a19e1a8156a28 "pdflatex"
   "Schrodinger_equation.tex" 1783971083 74226 c966c7a75aaa6ddd3e24c0b79c2c4c56 ""
   "c:/Users/Ehsan/OneDrive/Desktop/PDE_PROJECT/00.Full_Project/Schrodinger_equation.tex" 1783971083 74226 c966c7a75aaa6ddd3e24c0b79c2c4c56 ""
   "figures/SCH_diagram.png" 1783970540 959357 e6754201d131af204e80db88a59fcc93 ""
