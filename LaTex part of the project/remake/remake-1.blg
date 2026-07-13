@@ -1,0 +1,18 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'remake-1.blg'
+[282] biber-MSWIN64:342> INFO - === 
+[364] Biber.pm:421> INFO - Reading 'remake-1.bcf'
+[662] Biber.pm:1002> INFO - Found 18 citekeys in bib section 0
+[686] Biber.pm:4487> INFO - Processing section 0
+[715] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[806] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1036] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[1464] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1464] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1465] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[1465] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[1571] bbl.pm:676> INFO - Writing 'remake-1.bbl' with encoding 'UTF-8'
+[1611] bbl.pm:779> INFO - Output to remake-1.bbl
+[1612] Biber.pm:132> WARN - Duplicate entry key: 'cuomoScientificMachineLearning2022' in file 'references.bib', skipping ...
+[1612] Biber.pm:132> WARN - Duplicate entry key: 'wangDatadrivenRogueWaves2021' in file 'references.bib', skipping ...
+[1612] Biber.pm:134> INFO - WARNINGS: 2

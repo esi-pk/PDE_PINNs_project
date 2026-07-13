@@ -39,6 +39,42 @@
 		\end{center}
 	\end{titlepage}
 	
+
+
+\begin{abstract}
+In this work, the numerical solution of the one-dimensional time-dependent 
+Schrödinger equation with a harmonic potential is analyzed using the finite 
+difference method (FDM) and physics-informed neural networks (PINNs). 
+The complex-valued wave function is decomposed into its real and imaginary 
+components, which are approximated simultaneously using a fully connected 
+neural network. The governing differential equation, initial and boundary 
+conditions, and reference solutions obtained using the FDM are incorporated 
+into the PINN loss function. A two-stage optimization procedure employing 
+the Adam and L-BFGS optimizers is used to train the neural network over the 
+spatial interval \(x \in [-5,5]\) and the temporal interval \(t \in [0,1]\). 
+The results demonstrate very good agreement between the PINN and FDM 
+solutions. The relative \(L_2\) errors of the predicted wave function and 
+probability density are \(1.5462 \times 10^{-3}\) and 
+\(9.7108 \times 10^{-4}\), respectively, while the maximum absolute error 
+of the probability density is \(1.4054 \times 10^{-3}\). In addition, the 
+network produces PDE residuals with root-mean-square values of approximately 
+\(10^{-3}\) and conserves the total probability with a maximum drift below 
+\(3 \times 10^{-4}\). Although the FDM achieves greater accuracy in terms 
+of probability conservation, the PINN provides a continuous and mesh-free 
+approximation across the entire space--time domain.
+
+\medskip
+
+\noindent\textbf{Keywords:} Physics-informed neural networks; finite difference 
+method; time-dependent Schrödinger equation; quantum harmonic oscillator.
+\end{abstract}
+
+
+
+
+
+
+
 \section{Introduction}
 The Schrödinger equation is a partial differential equation in quantum mechanics that describes how the quantum state of a physical system change over time. This equation can handle the behavior of particles at the microscopic level. This equation have two forms that are based on times. The time-dependent Schrödinger equation describes the change of a system's wave function over time, while the time-independent version is used to determine stationary states and energy levels.
 
