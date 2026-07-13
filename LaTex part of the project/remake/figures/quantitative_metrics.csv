@@ -1,0 +1,38 @@
+Category,Metric,Value
+Final loss component,Real PDE residual loss,9.481252618571e-07
+Final loss component,Imaginary PDE residual loss,9.275026400246e-07
+Final loss component,Boundary loss u,1.788517423051e-08
+Final loss component,Boundary loss v,1.266207405592e-08
+Final loss component,Initial-condition loss u,2.993835934717e-08
+Final loss component,Initial-condition loss v,2.043340714408e-07
+Final loss component,Reference-data loss u,1.448548658800e-07
+Final loss component,Reference-data loss v,1.402921725457e-07
+Grouped loss,Combined PDE loss,1.875627901882e-06
+Grouped loss,Combined boundary loss,3.054724828644e-08
+Grouped loss,Combined initial-condition loss,2.342724307880e-07
+Grouped loss,Combined reference-data loss,2.851470384257e-07
+Grouped loss,Total training loss,2.425594619382e-06
+Relative error,Relative L2 error of u,1.170863999722e-03
+Relative error,Relative L2 error of v,3.284369241169e-03
+Relative error,Relative L2 error of psi,1.546240814376e-03
+Relative error,Relative L2 error of density,9.710838762801e-04
+Density error,Density MAE,1.245066410419e-04
+Density error,Density RMSE,2.548467237036e-04
+Density error,Maximum absolute density error,1.405368666746e-03
+PDE residual,Mean absolute real residual,7.544187246822e-04
+PDE residual,RMS real residual,1.037905109115e-03
+PDE residual,Maximum absolute real residual,7.463909685612e-03
+PDE residual,Mean absolute imaginary residual,7.526339031756e-04
+PDE residual,RMS imaginary residual,1.020912081003e-03
+PDE residual,Maximum absolute imaginary residual,6.744164973497e-03
+Norm conservation,Initial PINN norm,1.253300158037e+00
+Norm conservation,Minimum PINN norm,1.253073439305e+00
+Norm conservation,Maximum PINN norm,1.253596829971e+00
+Norm conservation,Maximum absolute PINN norm deviation,2.966719335804e-04
+Norm conservation,Maximum relative PINN norm deviation,2.367125956842e-04
+Norm conservation,Initial FDM norm,1.253314137316e+00
+Norm conservation,Minimum FDM norm,1.253314137316e+00
+Norm conservation,Maximum FDM norm,1.253314137316e+00
+Norm conservation,Maximum absolute FDM norm deviation,9.312550730556e-13
+Norm conservation,Maximum relative FDM norm deviation,7.430340449604e-13
+Norm conservation,Maximum PINN-FDM norm difference,2.826926543604e-04

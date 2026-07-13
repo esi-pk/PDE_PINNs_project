@@ -1,0 +1,825 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{abadi2016tensorflow}{inproceedings}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=9a04ae935da573a7aa9c83afdf2fd845}{%
+           family={Abadi},
+           familyi={A\bibinitperiod},
+           given={Martín},
+           giveni={M\bibinitperiod}}}%
+        {{hash=08cf514c08137f94d73b590060797f5b}{%
+           family={Barham},
+           familyi={B\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f756003cc97f5981d94995af3bd6862b}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Jianmin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c0d10aaf985cebf8d0497e1828f9313f}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Zhifeng},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=a4c859221cc41e2db6d63b486f955ba2}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={Andy},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4aecfb0cc2e1e3b7899129fa2a94e2b8}{%
+           family={Dean},
+           familyi={D\bibinitperiod},
+           given={Jeffrey},
+           giveni={J\bibinitperiod}}}%
+        {{hash=bd7f88635b51bc5abb3d5a2cab967724}{%
+           family={Devin},
+           familyi={D\bibinitperiod},
+           given={Matthieu},
+           giveni={M\bibinitperiod}}}%
+        {{hash=193bcec5240237591ad8fb697869f013}{%
+           family={Ghemawat},
+           familyi={G\bibinitperiod},
+           given={Sanjay},
+           giveni={S\bibinitperiod}}}%
+        {{hash=edc6964c6549e1839ca94d3d61e03f76}{%
+           family={Irving},
+           familyi={I\bibinitperiod},
+           given={Geoffrey},
+           giveni={G\bibinitperiod}}}%
+        {{hash=3b62e7eedeec9f7a7f7f3c3ec88637f1}{%
+           family={Isard},
+           familyi={I\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{24b1e0a436b566c814359b41f12b3ce3}
+      \strng{fullhash}{8b4244f50cc7c80638762e50c304b93e}
+      \strng{fullhashraw}{8b4244f50cc7c80638762e50c304b93e}
+      \strng{bibnamehash}{24b1e0a436b566c814359b41f12b3ce3}
+      \strng{authorbibnamehash}{24b1e0a436b566c814359b41f12b3ce3}
+      \strng{authornamehash}{24b1e0a436b566c814359b41f12b3ce3}
+      \strng{authorfullhash}{8b4244f50cc7c80638762e50c304b93e}
+      \strng{authorfullhashraw}{8b4244f50cc7c80638762e50c304b93e}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{12th USENIX symposium on operating systems design and implementation (OSDI 16)}
+      \field{title}{$\{$TensorFlow$\}$: a system for $\{$Large-Scale$\}$ machine learning}
+      \field{year}{2016}
+      \field{pages}{265\bibrangedash 283}
+      \range{pages}{19}
+    \endentry
+    \entry{cuomoScientificMachineLearning2022}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=a149dbc0c7d8c7b44289299d659521f4}{%
+           family={Cuomo},
+           familyi={C\bibinitperiod},
+           given={Salvatore},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d8310f78a6acc62b53d3fdaa57b0a84d}{%
+           family={Di\bibnamedelima Cola},
+           familyi={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Vincenzo\bibnamedelima Schiano},
+           giveni={V\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=07970330b2a43b5c2e55ae13af5a7097}{%
+           family={Giampaolo},
+           familyi={G\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+        {{hash=2b969effc2e931cc3f6118c144824d3f}{%
+           family={Rozza},
+           familyi={R\bibinitperiod},
+           given={Gianluigi},
+           giveni={G\bibinitperiod}}}%
+        {{hash=95a17c39168b9e6b8812f207b4e036c1}{%
+           family={Raissi},
+           familyi={R\bibinitperiod},
+           given={Maziar},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5e071190ec9de33600de48969adb345b}{%
+           family={Piccialli},
+           familyi={P\bibinitperiod},
+           given={Francesco},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{ecacc4512ae1bd881356a9535bcb4121}
+      \strng{fullhash}{1d6d8c2f135c688c54626fb90cff5b07}
+      \strng{fullhashraw}{1d6d8c2f135c688c54626fb90cff5b07}
+      \strng{bibnamehash}{ecacc4512ae1bd881356a9535bcb4121}
+      \strng{authorbibnamehash}{ecacc4512ae1bd881356a9535bcb4121}
+      \strng{authornamehash}{ecacc4512ae1bd881356a9535bcb4121}
+      \strng{authorfullhash}{1d6d8c2f135c688c54626fb90cff5b07}
+      \strng{authorfullhashraw}{1d6d8c2f135c688c54626fb90cff5b07}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Physics-Informed Neural Networks (PINN) are neural networks (NNs) that encode model equations, like Partial Differential Equations (PDE), as a component of the neural network itself. PINNs are nowadays used to solve PDEs, fractional equations, integral-differential equations, and stochastic PDEs. This novel methodology has arisen as a multi-task learning framework in which a NN must fit observed data while reducing a PDE residual. This article provides a comprehensive review of the literature on PINNs: while the primary goal of the study was to characterize these networks and their related advantages and disadvantages. The review also attempts to incorporate publications on a broader range of collocation-based physics informed neural networks, which stars form the vanilla PINN, as well as many other variants, such as physics-constrained neural networks (PCNN), variational hp-VPINN, and conservative PINN (CPINN). The study indicates that most research has focused on customizing the PINN through different activation functions, gradient optimization techniques, neural network structures, and loss function structures. Despite the wide range of applications for which PINNs have been used, by demonstrating their ability to be more feasible in some contexts than classical numerical techniques like Finite Element Method (FEM), advancements are still possible, most notably theoretical issues that remain unresolved.}
+      \field{issn}{0885-7474, 1573-7691}
+      \field{journaltitle}{Journal of Scientific Computing}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{3}
+      \field{shortjournal}{J Sci Comput}
+      \field{shorttitle}{Scientific {{Machine Learning Through Physics}}–{{Informed Neural Networks}}}
+      \field{title}{Scientific {{Machine Learning Through Physics}}–{{Informed Neural Networks}}: {{Where}} We Are and {{What}}’s {{Next}}}
+      \field{urlday}{24}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{92}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{88}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1007/s10915-022-01939-z
+      \endverb
+      \verb{file}
+      \verb C:\Users\Ehsan\Zotero\storage\A8A332EW\Cuomo et al. - 2022 - Scientific Machine Learning Through Physics–Informed Neural Networks Where we are and What’s Next.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/10.1007/s10915-022-01939-z
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/10.1007/s10915-022-01939-z
+      \endverb
+    \endentry
+    \entry{dissanayakeNeuralnetworkbasedApproximationsSolving1994}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=1b1dcf6ac853801ea35c0fca50e11e1c}{%
+           family={Dissanayake},
+           familyi={D\bibinitperiod},
+           given={M.\bibnamedelimi W.\bibnamedelimi M.\bibnamedelimi G.},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=10fb5856a4cb226af488ca667142beb0}{%
+           family={Phan‐Thien},
+           familyi={P\bibinithyphendelim T\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{c110b7e3e66bef3c837e76ccd00d82bf}
+      \strng{fullhash}{c110b7e3e66bef3c837e76ccd00d82bf}
+      \strng{fullhashraw}{c110b7e3e66bef3c837e76ccd00d82bf}
+      \strng{bibnamehash}{c110b7e3e66bef3c837e76ccd00d82bf}
+      \strng{authorbibnamehash}{c110b7e3e66bef3c837e76ccd00d82bf}
+      \strng{authornamehash}{c110b7e3e66bef3c837e76ccd00d82bf}
+      \strng{authorfullhash}{c110b7e3e66bef3c837e76ccd00d82bf}
+      \strng{authorfullhashraw}{c110b7e3e66bef3c837e76ccd00d82bf}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A numerical method, based on neural-network-basedfunctions, for solving partial differential equations is reported in the paper. Using a ‘universal approximator’ based on a neural network and point collocation, the numerical problem of solving the partial differential equation is transformed to an unconstrained minimization problem. The method is extremely easy to implement and is suitable for obtaining an approximate solution in a short period of time. The technique is illustrated with the aid of two numerical examples.}
+      \field{issn}{1069-8299, 1099-0887}
+      \field{journaltitle}{Communications in Numerical Methods in Engineering}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{3}
+      \field{shortjournal}{Commun. Numer. Meth. Engng.}
+      \field{title}{Neural‐network‐based Approximations for Solving Partial Differential Equations}
+      \field{urlday}{11}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{volume}{10}
+      \field{year}{1994}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{195\bibrangedash 201}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1002/cnm.1640100303
+      \endverb
+      \verb{file}
+      \verb C:\Users\Ehsan\Zotero\storage\Y2WIFVCL\Dissanayake and Phan‐Thien - 1994 - Neural‐network‐based approximations for solving partial differential equations.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1002/cnm.1640100303
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1002/cnm.1640100303
+      \endverb
+    \endentry
+    \entry{haghighatSciANNKerasTensorflow2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=54ceedda9dccec97fb61ec85fd321445}{%
+           family={Haghighat},
+           familyi={H\bibinitperiod},
+           given={Ehsan},
+           giveni={E\bibinitperiod}}}%
+        {{hash=09db3ff93c246f426bf98b4679773edf}{%
+           family={Juanes},
+           familyi={J\bibinitperiod},
+           given={Ruben},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{6e8f2f3c22df1cc68e8a43765a39e4e4}
+      \strng{fullhash}{6e8f2f3c22df1cc68e8a43765a39e4e4}
+      \strng{fullhashraw}{6e8f2f3c22df1cc68e8a43765a39e4e4}
+      \strng{bibnamehash}{6e8f2f3c22df1cc68e8a43765a39e4e4}
+      \strng{authorbibnamehash}{6e8f2f3c22df1cc68e8a43765a39e4e4}
+      \strng{authornamehash}{6e8f2f3c22df1cc68e8a43765a39e4e4}
+      \strng{authorfullhash}{6e8f2f3c22df1cc68e8a43765a39e4e4}
+      \strng{authorfullhashraw}{6e8f2f3c22df1cc68e8a43765a39e4e4}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{In this paper, we introduce SciANN, a Python package for scientific computing and physicsinformed deep learning using artificial neural networks. SciANN uses the widely used deeplearning packages Tensorflow and Keras to build deep neural networks and optimization models, thus inheriting many of Keras’s functionalities, such as batch optimization and model reuse for transfer learning. SciANN is designed to abstract neural network construction for scientific computations and solution and discovery of partial differential equations (PDE) using the physics-informed neural networks (PINN) architecture, therefore providing the flexibility to set up complex functional forms. We illustrate, in a series of examples, how the framework can be used for curve fitting on discrete data, and for solution and discovery of PDEs in strong and weak forms. We summarize the features currently available in SciANN, and also outline ongoing and future developments.}
+      \field{eprintclass}{cs.OH}
+      \field{eprinttype}{arXiv}
+      \field{issn}{00457825}
+      \field{journaltitle}{Computer Methods in Applied Mechanics and Engineering}
+      \field{month}{1}
+      \field{shortjournal}{Computer Methods in Applied Mechanics and Engineering}
+      \field{shorttitle}{{{SciANN}}}
+      \field{title}{{{SciANN}}: {{A Keras}}/{{Tensorflow}} Wrapper for Scientific Computations and Physics-Informed Deep Learning Using Artificial Neural Networks}
+      \field{urlday}{12}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{volume}{373}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{113552}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.cma.2020.113552
+      \endverb
+      \verb{eprint}
+      \verb 2005.08803
+      \endverb
+      \verb{file}
+      \verb C:\Users\Ehsan\Zotero\storage\RJQXG34G\Haghighat and Juanes - 2021 - SciANN A KerasTensorflow wrapper for scientific computations and physics-informed deep learning us.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2005.08803
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2005.08803
+      \endverb
+      \keyw{Computer Science - Machine Learning,Computer Science - Mathematical Software,Computer Science - Other Computer Science}
+    \endentry
+    \entry{hornikMultilayerFeedforwardNetworks1989}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=bec8dd1340457a82c21b54971e4c9417}{%
+           family={Hornik},
+           familyi={H\bibinitperiod},
+           given={Kurt},
+           giveni={K\bibinitperiod}}}%
+        {{hash=17a26ba07299c37a45cc2475a9f3bc8d}{%
+           family={Stinchcombe},
+           familyi={S\bibinitperiod},
+           given={Maxwell},
+           giveni={M\bibinitperiod}}}%
+        {{hash=426e452a5ec8e692f7740ce0d3e3655c}{%
+           family={White},
+           familyi={W\bibinitperiod},
+           given={Halbert},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{31166c18fa8ee825c1eb4693189f9e2a}
+      \strng{fullhash}{31166c18fa8ee825c1eb4693189f9e2a}
+      \strng{fullhashraw}{31166c18fa8ee825c1eb4693189f9e2a}
+      \strng{bibnamehash}{31166c18fa8ee825c1eb4693189f9e2a}
+      \strng{authorbibnamehash}{31166c18fa8ee825c1eb4693189f9e2a}
+      \strng{authornamehash}{31166c18fa8ee825c1eb4693189f9e2a}
+      \strng{authorfullhash}{31166c18fa8ee825c1eb4693189f9e2a}
+      \strng{authorfullhashraw}{31166c18fa8ee825c1eb4693189f9e2a}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper rigorously establishes thut standard rnultiluyerfeedforward networks with as f\&v us one hidden layer using arbitrary squashing functions ure capable of upproximating uny Bore1 measurable function from one finite dimensional space to another to any desired degree of uccuracy, provided sujficirntly muny hidden units are available. In this sense, multilayer feedforward networks are u class of universul rlpproximators.}
+      \field{issn}{08936080}
+      \field{journaltitle}{Neural Networks}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{5}
+      \field{shortjournal}{Neural Networks}
+      \field{title}{Multilayer Feedforward Networks Are Universal Approximators}
+      \field{urlday}{11}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{volume}{2}
+      \field{year}{1989}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{359\bibrangedash 366}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/0893-6080(89)90020-8
+      \endverb
+      \verb{file}
+      \verb C:\Users\Ehsan\Zotero\storage\F49R9RCR\Hornik et al. - 1989 - Multilayer feedforward networks are universal approximators.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0893608089900208
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/0893608089900208
+      \endverb
+    \endentry
+    \entry{ketkar2017introduction}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{hash=f46a0461e0b7c0c5f2e1fcaacaa90681}{%
+           family={Ketkar},
+           familyi={K\bibinitperiod},
+           given={Nikhil},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{f46a0461e0b7c0c5f2e1fcaacaa90681}
+      \strng{fullhash}{f46a0461e0b7c0c5f2e1fcaacaa90681}
+      \strng{fullhashraw}{f46a0461e0b7c0c5f2e1fcaacaa90681}
+      \strng{bibnamehash}{f46a0461e0b7c0c5f2e1fcaacaa90681}
+      \strng{authorbibnamehash}{f46a0461e0b7c0c5f2e1fcaacaa90681}
+      \strng{authornamehash}{f46a0461e0b7c0c5f2e1fcaacaa90681}
+      \strng{authorfullhash}{f46a0461e0b7c0c5f2e1fcaacaa90681}
+      \strng{authorfullhashraw}{f46a0461e0b7c0c5f2e1fcaacaa90681}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Deep learning with python: a hands-on introduction}
+      \field{title}{Introduction to keras}
+      \field{year}{2017}
+      \field{pages}{97\bibrangedash 111}
+      \range{pages}{15}
+    \endentry
+    \entry{kondor2018generalization}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=6abc8eb3beac1cdef82d485e69f760df}{%
+           family={Kondor},
+           familyi={K\bibinitperiod},
+           given={Risi},
+           giveni={R\bibinitperiod}}}%
+        {{hash=192e29a7281ca62aba55795c0d1a33bb}{%
+           family={Trivedi},
+           familyi={T\bibinitperiod},
+           given={Shubhendu},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {PMLR}%
+      }
+      \strng{namehash}{4dd3e31ed1e148a840d4b87b9d1be19e}
+      \strng{fullhash}{4dd3e31ed1e148a840d4b87b9d1be19e}
+      \strng{fullhashraw}{4dd3e31ed1e148a840d4b87b9d1be19e}
+      \strng{bibnamehash}{4dd3e31ed1e148a840d4b87b9d1be19e}
+      \strng{authorbibnamehash}{4dd3e31ed1e148a840d4b87b9d1be19e}
+      \strng{authornamehash}{4dd3e31ed1e148a840d4b87b9d1be19e}
+      \strng{authorfullhash}{4dd3e31ed1e148a840d4b87b9d1be19e}
+      \strng{authorfullhashraw}{4dd3e31ed1e148a840d4b87b9d1be19e}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International conference on machine learning}
+      \field{title}{On the generalization of equivariance and convolution in neural networks to the action of compact groups}
+      \field{year}{2018}
+      \field{pages}{2747\bibrangedash 2755}
+      \range{pages}{9}
+    \endentry
+    \entry{kumarMultilayerPerceptronsRadial2011}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=939a07ef95f263a77489acec648a3070}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Manoj},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e9a0b96435986a90cb2a7917ff645b69}{%
+           family={Yadav},
+           familyi={Y\bibinitperiod},
+           given={Neha},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{7fe8ac6b5b4ed508426e1e30c419b4c8}
+      \strng{fullhash}{7fe8ac6b5b4ed508426e1e30c419b4c8}
+      \strng{fullhashraw}{7fe8ac6b5b4ed508426e1e30c419b4c8}
+      \strng{bibnamehash}{7fe8ac6b5b4ed508426e1e30c419b4c8}
+      \strng{authorbibnamehash}{7fe8ac6b5b4ed508426e1e30c419b4c8}
+      \strng{authornamehash}{7fe8ac6b5b4ed508426e1e30c419b4c8}
+      \strng{authorfullhash}{7fe8ac6b5b4ed508426e1e30c419b4c8}
+      \strng{authorfullhashraw}{7fe8ac6b5b4ed508426e1e30c419b4c8}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Since neural networks have universal approximation capabilities, therefore it is possible to postulate them as solutions for given differential equations that define unsupervised errors. In this paper, we present a wide survey and classification of different Multilayer Perceptron (MLP) and Radial Basis Function (RBF) neural network techniques, which are used for solving differential equations of various kinds. Our main purpose is to provide a synthesis of the published research works in this area and stimulate further research interest and effort in the identified topics. Here, we describe the crux of various research articles published by numerous researchers, mostly within the last 10 years to get a better knowledge about the present scenario.}
+      \field{issn}{08981221}
+      \field{journaltitle}{Computers \& Mathematics with Applications}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{10}
+      \field{shortjournal}{Computers \& Mathematics with Applications}
+      \field{shorttitle}{Multilayer Perceptrons and Radial Basis Function Neural Network Methods for the Solution of Differential Equations}
+      \field{title}{Multilayer Perceptrons and Radial Basis Function Neural Network Methods for the Solution of Differential Equations: {{A}} Survey}
+      \field{urlday}{11}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{volume}{62}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{3796\bibrangedash 3811}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1016/j.camwa.2011.09.028
+      \endverb
+      \verb{file}
+      \verb C:\Users\Ehsan\Zotero\storage\2SD6PKG3\Kumar and Yadav - 2011 - Multilayer perceptrons and radial basis function neural network methods for the solution of differen.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0898122111007966
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0898122111007966
+      \endverb
+    \endentry
+    \entry{lagarisArtificialNeuralNetworks1998}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=92d10dbb011616ac1a21c8ccf55875bd}{%
+           family={Lagaris},
+           familyi={L\bibinitperiod},
+           given={I.E.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=a69fc2548169625de5a2e0376be45c34}{%
+           family={Likas},
+           familyi={L\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=aa2c1166ca15ba1d805579bfb2b3f170}{%
+           family={Fotiadis},
+           familyi={F\bibinitperiod},
+           given={D.I.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e49b0694aed695e8f498931a83518ee}
+      \strng{fullhash}{4e49b0694aed695e8f498931a83518ee}
+      \strng{fullhashraw}{4e49b0694aed695e8f498931a83518ee}
+      \strng{bibnamehash}{4e49b0694aed695e8f498931a83518ee}
+      \strng{authorbibnamehash}{4e49b0694aed695e8f498931a83518ee}
+      \strng{authornamehash}{4e49b0694aed695e8f498931a83518ee}
+      \strng{authorfullhash}{4e49b0694aed695e8f498931a83518ee}
+      \strng{authorfullhashraw}{4e49b0694aed695e8f498931a83518ee}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present a method to solve initial and boundary value problems using artificial neural networks. A trial solution of the differential equation is written as a sum of two parts. The first part satisfies the initial/boundary conditions and contains no adjustable parameters. The second part is constructed so as not to affect the initial/boundary conditions. This part involves a feedforward neural network containing adjustable parameters (the weights). Hence by construction the initial/boundary conditions are satisfied and the network is trained to satisfy the differential equation. The applicability of this approach ranges from single ordinary differential equations (ODE’s), to systems of coupled ODE’s and also to partial differential equations (PDE’s). In this article, we illustrate the method by solving a variety of model problems and present comparisons with solutions obtained using the Galekrkin finite element method for several cases of partial differential equations. With the advent of neuroprocessors and digital signal processors the method becomes particularly interesting due to the expected essential gains in the execution speed.}
+      \field{issn}{10459227}
+      \field{journaltitle}{IEEE Transactions on Neural Networks}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{5}
+      \field{shortjournal}{IEEE Trans. Neural Netw.}
+      \field{title}{Artificial Neural Networks for Solving Ordinary and Partial Differential Equations}
+      \field{urlday}{11}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{volume}{9}
+      \field{year}{1998}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{987\bibrangedash 1000}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/72.712178
+      \endverb
+      \verb{file}
+      \verb C:\Users\Ehsan\Zotero\storage\ASTFHVM5\Lagaris et al. - 1998 - Artificial neural networks for solving ordinary and partial differential equations.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://ieeexplore.ieee.org/document/712178/
+      \endverb
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/document/712178/
+      \endverb
+    \endentry
+    \entry{lecunDeepLearning2015}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
+           family={LeCun},
+           familyi={L\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9a8750ccdb2a4cf14d2655face1ce016}{%
+           family={Hinton},
+           familyi={H\bibinitperiod},
+           given={Geoffrey},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{fullhash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{fullhashraw}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{bibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authorbibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authornamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authorfullhash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authorfullhashraw}{c6c75bd00ce5a488e91a749d8383b3df}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{28}
+      \field{issn}{0028-0836, 1476-4687}
+      \field{journaltitle}{Nature}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{7553}
+      \field{shortjournal}{Nature}
+      \field{title}{Deep Learning}
+      \field{urlday}{11}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{volume}{521}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{436\bibrangedash 444}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1038/nature14539
+      \endverb
+      \verb{file}
+      \verb C:\Users\Ehsan\Zotero\storage\EE9YNGVN\LeCun et al. - 2015 - Deep learning.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/nature14539
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/nature14539
+      \endverb
+    \endentry
+    \entry{psichogiosHybridNeuralNetworkfirst1992}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=c9f569082bcbc5be5d86bc42a863e31d}{%
+           family={Psichogios},
+           familyi={P\bibinitperiod},
+           given={Dimitris\bibnamedelima C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=8c54dc99b4e842ee37250eda3c57ef20}{%
+           family={Ungar},
+           familyi={U\bibinitperiod},
+           given={Lyle\bibnamedelima H.},
+           giveni={L\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{28872682bc5e8d124ade38905e320dcf}
+      \strng{fullhash}{28872682bc5e8d124ade38905e320dcf}
+      \strng{fullhashraw}{28872682bc5e8d124ade38905e320dcf}
+      \strng{bibnamehash}{28872682bc5e8d124ade38905e320dcf}
+      \strng{authorbibnamehash}{28872682bc5e8d124ade38905e320dcf}
+      \strng{authornamehash}{28872682bc5e8d124ade38905e320dcf}
+      \strng{authorfullhash}{28872682bc5e8d124ade38905e320dcf}
+      \strng{authorfullhashraw}{28872682bc5e8d124ade38905e320dcf}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Abstract A hybrid neural network‐first principles modeling scheme is developed and used to model a fedbatch bioreactor. The hybrid model combines a partial first principles model, which incorporates the available prior knowledge about the process being modeled, with a neural network which serves as an estimator of unmeasured process parameters that are difficult to model from first principles. This hybrid model has better properties than standard “black‐box” neural network models in that it is able to interpolate and extrapolate much more accurately, is easier to analyze and interpret, and requires significantly fewer training examples. Two alternative state and parameter estimation strategies, extended Kalman filtering and NLP optimization, are also considered. When no a priori known model of the unobserved process parameters is available, the hybrid network model gives better estimates of the parameters, when compared to these methods. By providing a model of these unmeasured parameters, the hybrid network can also make predictions and hence can be used for process optimization. These results apply both when full and partial state measurements are available, but in the latter case a state reconstruction method must be used for the first principles component of the hybrid model.}
+      \field{issn}{0001-1541, 1547-5905}
+      \field{journaltitle}{AIChE Journal}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{10}
+      \field{shortjournal}{AIChE Journal}
+      \field{title}{A Hybrid Neural Network‐first Principles Approach to Process Modeling}
+      \field{urlday}{11}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{volume}{38}
+      \field{year}{1992}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1499\bibrangedash 1511}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1002/aic.690381003
+      \endverb
+      \verb{file}
+      \verb C:\Users\Ehsan\Zotero\storage\MFRRYVCM\Psichogios and Ungar - 1992 - A hybrid neural network‐first principles approach to process modeling.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://aiche.onlinelibrary.wiley.com/doi/10.1002/aic.690381003
+      \endverb
+      \verb{url}
+      \verb https://aiche.onlinelibrary.wiley.com/doi/10.1002/aic.690381003
+      \endverb
+    \endentry
+    \entry{raissiPhysicsinformedNeuralNetworks2019}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=a3194cb4f8e3959e569236521aa2fd86}{%
+           family={Raissi},
+           familyi={R\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c2e8423b7b49343a85abf9af92ee2a82}{%
+           family={Perdikaris},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=1c2f5930e36485e8d38a87746769fdcc}{%
+           family={Karniadakis},
+           familyi={K\bibinitperiod},
+           given={G.E.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{a17a0649dc8bad70026488d4ea37c508}
+      \strng{fullhash}{a17a0649dc8bad70026488d4ea37c508}
+      \strng{fullhashraw}{a17a0649dc8bad70026488d4ea37c508}
+      \strng{bibnamehash}{a17a0649dc8bad70026488d4ea37c508}
+      \strng{authorbibnamehash}{a17a0649dc8bad70026488d4ea37c508}
+      \strng{authornamehash}{a17a0649dc8bad70026488d4ea37c508}
+      \strng{authorfullhash}{a17a0649dc8bad70026488d4ea37c508}
+      \strng{authorfullhashraw}{a17a0649dc8bad70026488d4ea37c508}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{00219991}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{shortjournal}{Journal of Computational Physics}
+      \field{shorttitle}{Physics-Informed Neural Networks}
+      \field{title}{Physics-Informed Neural Networks: {{A}} Deep Learning Framework for Solving Forward and Inverse Problems Involving Nonlinear Partial Differential Equations}
+      \field{urlday}{13}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{volume}{378}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{686\bibrangedash 707}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1016/j.jcp.2018.10.045
+      \endverb
+      \verb{file}
+      \verb C:\Users\Ehsan\Zotero\storage\NTUI8L6I\Raissi et al. - 2019 - Physics-informed neural networks A deep learning framework for solving forward and inverse problems.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0021999118307125
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0021999118307125
+      \endverb
+    \endentry
+    \entry{vlachasDatadrivenForecastingHighdimensional2018}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=cfd0a0dc753b39bc214b2866fdafe3c3}{%
+           family={Vlachas},
+           familyi={V\bibinitperiod},
+           given={Pantelis\bibnamedelima R.},
+           giveni={P\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=012fc9a772132c1516a8e9bf09dd1a88}{%
+           family={Byeon},
+           familyi={B\bibinitperiod},
+           given={Wonmin},
+           giveni={W\bibinitperiod}}}%
+        {{hash=d34de4f5b0614d82adb9b8661e0ff7e9}{%
+           family={Wan},
+           familyi={W\bibinitperiod},
+           given={Zhong\bibnamedelima Y.},
+           giveni={Z\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=370fd8e5f3e40ecf42338ab09adcecfa}{%
+           family={Sapsis},
+           familyi={S\bibinitperiod},
+           given={Themistoklis\bibnamedelima P.},
+           giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=d0a18518b57cef85c32665e92ec3dea1}{%
+           family={Koumoutsakos},
+           familyi={K\bibinitperiod},
+           given={Petros},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{a3eb773d5db55123a28b1b35ccae1314}
+      \strng{fullhash}{a785e09035293c4c851845821631b6d3}
+      \strng{fullhashraw}{a785e09035293c4c851845821631b6d3}
+      \strng{bibnamehash}{a3eb773d5db55123a28b1b35ccae1314}
+      \strng{authorbibnamehash}{a3eb773d5db55123a28b1b35ccae1314}
+      \strng{authornamehash}{a3eb773d5db55123a28b1b35ccae1314}
+      \strng{authorfullhash}{a785e09035293c4c851845821631b6d3}
+      \strng{authorfullhashraw}{a785e09035293c4c851845821631b6d3}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We introduce a data-driven forecasting method for high-dimensional chaotic systems using long short-term memory (LSTM) recurrent neural networks. The proposed LSTM neural networks perform inference of high-dimensional dynamical systems in their reduced order space and are shown to be an effective set of nonlinear approximators of their attractor. We demonstrate the forecasting performance of the LSTM and compare it with Gaussian processes (GPs) in time series obtained from the Lorenz 96 system, the Kuramoto–Sivashinsky equation and a prototype climate model. The LSTM networks outperform the GPs in short-term forecasting accuracy in all applications considered. A hybrid architecture, extending the LSTM with a mean stochastic model (MSM–LSTM), is proposed to ensure convergence to the invariant measure. This novel hybrid method is fully data-driven and extends the forecasting capabilities of LSTM networks.}
+      \field{issn}{1364-5021, 1471-2946}
+      \field{journaltitle}{Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{2213}
+      \field{shortjournal}{Proc. R. Soc. A.}
+      \field{title}{Data-Driven Forecasting of High-Dimensional Chaotic Systems with Long Short-Term Memory Networks}
+      \field{urlday}{11}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{volume}{474}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{20170844}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1098/rspa.2017.0844
+      \endverb
+      \verb{file}
+      \verb C:\Users\Ehsan\Zotero\storage\D6HDRKM2\Vlachas et al. - 2018 - Data-driven forecasting of high-dimensional chaotic systems with long short-term memory networks.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://royalsocietypublishing.org/rspa/article/56754
+      \endverb
+      \verb{url}
+      \verb http://royalsocietypublishing.org/rspa/article/56754
+      \endverb
+    \endentry
+    \entry{wangDatadrivenRogueWaves2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=944d21a090d2fc32d2cdd40c7a346126}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+        {{hash=bbeeb04387492f505757a7036b094a7d}{%
+           family={Yan},
+           familyi={Y\bibinitperiod},
+           given={Zhenya},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{968f401d43c41228d604d4247ec2b651}
+      \strng{fullhash}{968f401d43c41228d604d4247ec2b651}
+      \strng{fullhashraw}{968f401d43c41228d604d4247ec2b651}
+      \strng{bibnamehash}{968f401d43c41228d604d4247ec2b651}
+      \strng{authorbibnamehash}{968f401d43c41228d604d4247ec2b651}
+      \strng{authornamehash}{968f401d43c41228d604d4247ec2b651}
+      \strng{authorfullhash}{968f401d43c41228d604d4247ec2b651}
+      \strng{authorfullhashraw}{968f401d43c41228d604d4247ec2b651}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{03759601}
+      \field{journaltitle}{Physics Letters A}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{shortjournal}{Physics Letters A}
+      \field{title}{Data-Driven Rogue Waves and Parameter Discovery in the Defocusing Nonlinear {{Schrödinger}} Equation with a Potential Using the {{PINN}} Deep Learning}
+      \field{urlday}{8}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{volume}{404}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{127408}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.physleta.2021.127408
+      \endverb
+      \verb{file}
+      \verb C:\Users\Ehsan\Zotero\storage\XA5BEI47\Wang and Yan - 2021 - Data-driven rogue waves and parameter discovery in the defocusing nonlinear Schrödinger equation wit.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0375960121002723
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0375960121002723
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
