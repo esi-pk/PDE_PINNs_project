@@ -5,7 +5,9 @@
 \hypersetup{
 	colorlinks=true,
 	linkcolor=blue,
+	urlcolor=black
 }
+
 \usepackage{amsfonts, amsmath, amssymb, amsthm}
 \usepackage{graphicx}
 \usepackage{subfigure}
@@ -38,15 +40,30 @@
 	\end{titlepage}
 	
 \section{Introduction}
-\subsection{Background}
 The Schrödinger equation is a partial differential equation in quantum mechanics that describes how the quantum state of a physical system change over time. This equation can handle the behavior of particles at the microscopic level. This equation have two forms that are based on times. The time-dependent Schrödinger equation describes the change of a system's wave function over time, while the time-independent version is used to determine stationary states and energy levels.
 
 In most cases, you cant solve the equation so the exact analytical solutions are not available, especially for complex potentials or higher-dimensional systems. As a result, numerical methods play a crucial role in approximating solutions. The solution to the Schrödinger equation is called the wave function that provides information about the probability distribution of a particle's position and momentum. We mostly are going to survey Classical numerical approaches and Physics-Informed Neural Networks (PINNs) in this article.
 
 The Classical numerical approaches such as the finite difference method (FDM) and finite element method (FEM) have been widely used for solving partial differential equations like Schrödinger equation. These methods rely on discretization of the domain and typically require careful handling of stability, convergence, and computational cost. On the other hand in recent years, PINNs have appeard as a modern approach for solving differential equations. PINNs merge the physical laws directly into the loss function of a neural network, so the solution will be approximated without discretization of the domain. This makes PINNs usefull for complex and high-dimensional problems.
 
-\subsection{Objective of the Study}
-The main objective of this paper is to compare classical numerical methods and Physics-Informed Neural Networks in solving the Schrödinger equation. Despite the growing interest in PINNs, we are not quite sure that how they compare to classical numerical methods in terms of accuracy, efficiency, and stability. A systematic comparison is necessary to evaluate their strengths and limitations.
+Physics-informed neural computations have their theoretical underpinnings in the universal approximation theorem formulated by Hornik et al. \cite{hornikMultilayerFeedforwardNetworks1989}. The paper demonstrated that multilayer feedforward neural networks can approximate classes of continuous and measurable functions witharbitrary accuracy. This theoretical result is of great importancebecause it gave rise to the idea of representing unknown physical fields using the neural networks and, consequently, the solution of differential equations.
+
+In the 1990s, efforts to combine neural networks with physical knowledge and differential equation modelling began. An early example was was proposed by Psichogios and Ungar \cite{psichogiosHybridNeuralNetworkfirst1992} when they presented the hybrid neural network-first-principles approach for process modeling. Here, the neural network served as a tool to approximate the unknown process parameters, whereas the known part of the system was modeled through physical relations like mass and energy balances. Even though the neural network was not used to approximate the solution of thedifferential equation in this case, this was one of the first attempts to incorporate prior physical knowledge into the neural network models.
+
+Building on the universal approximation theorem proposed by Hornik et al. \cite{hornikMultilayerFeedforwardNetworks1989}, the unknown solution of the PDE was approximated by a multi-layered feed-forward neural network as suggested by Dissanayake and Phan-Thien \cite{dissanayakeNeuralnetworkbasedApproximationsSolving1994}. The parameters of the network were adjusted such that the objective function made up of the residual from the governing-equation and boundary conditions at certain collocation points was minimized. Given the similarity of the formulation of the objective function with those of current PINNs, the method suggested by Dissanayake and Phan-Thien might be regarded as an important precursor to modern physics-informed neural networks, even though physics-informed neural networks had not been invented yet.
+
+Later in the decade, Lagaris et al. \cite{lagarisArtificialNeuralNetworks1998} proposed a framework for solving initial/boundary value problems defined by both ODEs and PDEs. Their framework included constructing the trial solutions through a known part satisfying the initial/boundary conditions and a variable part obtained by a neural network.
+
+During the 2000s and early 2010s, improvements in computational power and numerical optimization led to the creation of highly developed techniques of solving differential equations using neural-network methods. As reviewed by Kumar and Yadav \cite{kumarMultilayerPerceptronsRadial2011} , a wide range of methods were proposed based on multilayer perceptron, radial-basis-function, hybrid and collocation methods of modeling ODEs and PDEs. The emergence of deep learning further increased the capacity of neural networks to perform complex computations, allowing researchers to train models consisting of multiple processing layers and therefore learn more complicated functions \cite{lecunDeepLearning2015}. Moreover, the rise of software platforms, such as TensorFlow and Keras made building and differentiating deep neural networks easier, faster and more convenient \cite{abadi2016tensorflow, ketkar2017introduction}. The first one provides a computation graph and automatic differentiation, making neural networks scalable across CPUs and GPUs, while the second allows defining and training the network architecture in a straightforward way.
+
+In parallel with the above progress, researchers also investigated the use of deep learning for structured scientific problems. For instance, Kondor and Trivedi \cite{kondorGeneralizationEquivarianceConvolution} presented a theory on how symmetry/equivariance can be considered within neural network frameworks, while Vlachas et al. \cite{vlachasDatadrivenForecastingHighdimensional2018} showed that LSTM networks can predict chaotic high-dimensional dynamical systems based solely on the input data. These works were not directly related to physics-informed neural networks,but they made significant contribution to the progress in deep-learning techniques for modelling physical and dynamical systems. Building upon earlier neural-network approaches for differential equations, advances in deep learning and automatic differentiation, and the growing integration of physical knowledge into machine learning, Raissi et al. \cite{raissiPhysicsinformedNeuralNetworks2019} developed the modern PINN formulation for nonlinear PDEs.
+
+Following the work of Raissi , Haghighat and Juanes \cite{haghighatSciANNKerasTensorflow2021} introduced SciANN, a TensorFlow- and Keras-based library developed for scientific computing and physics-informed deep learning. The applications of PINNs have expanded rapidly across a wide range of scientific and engineering disciplines. Researchers have successfully applied PINNs to nonlinear fluid dynamics, inverse parameter 
+identification, computational finance, additive manufacturing, and other data-driven scientific computing problems \cite{zhuMachineLearningMetal2020,xuExploreMissingFlow2021,taniosPhysicsInformedNeural2021,savovicComparativeStudyExplicit2023a}. These studies demonstrate the versatility of PINNs in solving both forward and inverse PDE problems while effectively incorporating physical constraints into the learning process.
+
+In this case, FDM and PINNs are used to find solutions for the one-dimensional time-dependent Schrödinger equation. The finite difference method is a traditional numerical approach where the differential operator in the equation is approximated at discrete points in a numerical grid. The physics-informed neural networks, however, use the loss function, where the PDE is part of the loss function and the conditions are added separately, while the neural network attempts to minimize this loss function. FDM uses mesh discretization, whereas PINN can produce continuous solutions using automatic differentiation without a mesh. The results from both methods will be compared to the analytical solution in this paper.
+
+
 
 \section{Mathematical Formulation}
 \subsection{Early-Stage Quantum Theory}
@@ -205,7 +222,6 @@ For time-dependent Schrödinger equations, methods like Crank–Nicolson, implic
 \subsection{Finite Difference Methods}
 Finite Difference Methods (FDM) are numerical techniques used to approximate solutions to differential equations by discretizing the equations in both time and space. The continuous derivatives in the equations are replaced with finite difference approximations, which transform the problem into a system of algebraic equations that can be solved computationally. FDM is widely used to solve both time-dependent and time-independent forms of the Schrödinger equation.
 
-\subsubsection{Discretizing the Domain}
 Discretizing the domain transforms the continuous space and time where the wave function $\Psi (x,t)$ exists into a finite set of specific points called a mesh or grid, because computers cannot handle an infinite continuum of points.
 
 The spatial domain is divided into equally spaced grid points defined as 
@@ -230,7 +246,6 @@ At any time step $n$ the entire spatial state can be treated as a vector
 \end{equation}
 which represents the numerical state of the system at that particular time.
 
-\subsubsection{Approximating the Schrödinger Equation}
 After discretizing the computational domain, the next step in the finite difference method is to approximate the derivatives appearing in the Schrödinger equation. Since numerical algorithms cannot directly evaluate continuous derivatives, these derivatives are replaced by algebraic expressions involving values of the wave function at neighboring grid points. This transformation converts the differential equation into a system of algebraic equations that can be solved using a computer.
 
 The kinetic energy term in the Schrödinger equation contains the second spatial derivative of the wave function. A commonly used approximation is the second-order centered finite difference formula
@@ -248,44 +263,7 @@ For improved accuracy, central difference approximations may be employed. In thi
 	\frac{\partial \Psi }{\partial t} \approx \frac{\Psi_j^{n+1} - \Psi_j^{n-1}}{2 \Delta t}
 \end{equation}
 
-\subsubsection{Implementation Strategies}
 After discretization and derivative approximation, the finite difference equations must be solved using an appropriate numerical strategy. Several implementation techniques have been developed depending on the type of Schrödinger equation being considered and the desired numerical properties, such as stability, efficiency, and accuracy.
-
-\begin{itemize}
-	\item 
-	The Method of Lines (MoL):
-\end{itemize}
-In this method, only the spatial derivatives(the Laplacian) are discretized using finite differences, while the time variable remains continuous. As a result, the Schrödinger equation is transformed into a system of coupled ordinary differential equations (ODEs) where $\hbar = m = 1$
-\begin{equation}
-	 \frac{d \Psi}{dt} = \frac{i}{2} \left[ \frac{\Psi_{j+1}^n - 2 \Psi_j^n + \Psi_{j-1}^n}{\Delta x^2} \right] - i V \Psi(t) \quad \Rightarrow \quad
-	 \frac{d \Psi}{dt} = S(\Psi)
-\end{equation}
-Time evolution is then performed using an explicit third-order Runge–Kutta (RK3) scheme:
-\begin{equation}
-	k_1 = \Delta t S(\Psi ^n), \quad 
-	k_2 = \Delta t S(\Psi ^n + \frac{1}{2} k_1), \quad 
-	k_3 = \Delta t S(\Psi ^n + \frac{1}{2} k_2)
-\end{equation}
-\begin{equation}
-	\Psi^{n+1} = \Psi^n + \frac{1}{6} k_1 +  \frac{2}{3} k_2 + \frac{1}{6} k_3
-\end{equation}
-
-\begin{itemize}
-	\item 
-	Imaginary Time Evolution (Wick Rotation):
-\end{itemize}
-Imaginary Time Evolution is a numerical technique commonly used to compute the stationary states of the Schrödinger equation, particularly the ground state. The method is based on the substitution $\tau = it$ where $t$ is the real time and $\tau$ is the imaginary time. This transformation, often referred to as a Wick rotation, converts the time-dependent Schrödinger equation into a diffusion-type equation (a partial differential equation that describes how a physical quantity spreads or smooths out over time due to diffusion-like processes: $\frac{\partial u}{\partial t} = D \nabla^2 u$).
-\begin{equation}
-	\frac{\partial}{\partial t} = i \frac{\partial}{\partial \tau} \quad \Rightarrow \quad
-	\frac{\partial \Psi}{\partial \tau} = \frac{\hbar}{2m} \nabla^2 \Psi - \frac{V}{\hbar} \Psi 
-\end{equation}
-Notice that this has the same structure as the diffusion equation. The Laplacian causes the wavefunction to become smoother over imaginary time, while the potential term acts as a source or sink.
-
-If the initial wave function is expressed as a linear combination of the eigenfunctions of the Hamiltonian we have
-\begin{equation}
-	\Psi(x, \tau) = \sum_{n} c_n \phi_n (x) e^{-E_n \tau}
-\end{equation}
-where $\phi_n(x)$ are the eigenfunctions, $E_n$ are the corresponding energy eigenvalues, and $c_n$ are expansion coefficients, each component decays exponentially as the imaginary time increases. As $ \tau \to \infty $, $e^{-(E_n - E_0) \tau} \to 0$ for $n > 0$. so only the ground state remains $\Psi (\tau) \approx c_0 \phi_0 e^{E_0 \tau}$
 
 \begin{itemize}
 	\item 
@@ -314,10 +292,31 @@ For unbounded domains (infinite space), non-local boundary conditions allow wave
 	\partial_x \Psi(0,t) = \sqrt{\frac{2}{\pi}} e^{-i\pi/4} e^{-iV_- t} \frac{d}{dt} \int_0^t \frac{\Psi(0,\tau)e^{iV_- \tau}}{\sqrt{t-\tau}}\, d\tau.
 \end{equation}
 
+A homogeneous Dirichlet boundary condition is a type of essential boundary condition in which the value of the unknown function is prescribed to be zero on the boundary of the computational domain. its mathematically defined as
+\begin{equation}
+	\Psi(a,t) = \Psi(b,t) = 0 \; ; \quad \forall t \geq 0
+\end{equation}
+ In the numerical solution of the Schrödinger equation, this condition restricts the wave function to vanish at the boundaries, preventing the particle probability density from existing outside the defined domain.
+ 
+\begin{itemize}
+	\item 
+	The Crank-Nicolson Method:
+\end{itemize}
+The Crank–Nicolson method is an implicit finite difference scheme that combines the second-order central difference approximation in space with the trapezoidal rule(dividing the space into a row of trapezoids) in time, resulting in a numerical method that is second-order accurate, unconditionally stable, and preserves the unitary evolution of the quantum wave function.
+
+instead of evaluating the Hamiltonian only at $t_n$ or $t_{n+1}$, the method uses the average
+\begin{equation}
+	H \Psi \approx \frac{1}{2} \left( H \Psi^{n+1} + H \Psi^n \right)
+\end{equation}
+Therefore, the discretized Schrödinger equation becomes
+\begin{equation}
+	i \hbar \frac{\Psi_j^{n+1}-\Psi_j^n}{\Delta t} = \frac{1}{2} \left( H \Psi_j^{n+1} + H \Psi_j^n \right)
+\end{equation}
+This symmetric treatment of the two time levels is the defining characteristic of the Crank–Nicolson method. Unlike other methods, Crank-Nicolson is unconditionally stable for any $r = \frac{\Delta t}{\Delta x^2}$.
+
 \subsection{Finite Element Methods}
 The Finite Element Method (FEM) is a numerical technique that approximates the solution by dividing the domain into a collection of small subdomains called finite elements, and finding an approximate solution using locally defined basis functions. Unlike the Finite Difference Method (FDM), which approximates derivatives directly at discrete grid points, FEM transforms the governing differential equation into its weak (variational) form before discretization. This formulation provides greater flexibility for handling complex geometries, irregular meshes and variable material properties.
 
-\subsubsection{Discretizing the Domain}
 Domain discretization is the first step. Let $\Omega \subset \mathbb{R}^d$ where $d=1,2,3$ denote the domain. Such that
 \begin{equation}
 	\bar{\Omega} = \bigcup_{e=1}^{m} \Omega_e
@@ -350,7 +349,6 @@ The continuous wave function is approximated by a finite-dimensional expansion o
 \end{equation}
 where $N_i(x)$ are the finite element basis functions and $\Psi_i (t)$ are the unknown time-dependent nodal coefficients representing the state of the system at node $i$. This discretization effectively transforms the TDSE into a system of ordinary differential equations in time which can be solved as a system of algebraic equations at each time step.
 
-\subsubsection{Weak Solution Formulation}
 Instead of requiring the solution to satisfy the Schrödinger equation pointwise, the equation is reformulated as an integral identity over the computational domain. This approach reduces the differentiability requirements on the solution, making it possible to approximate the wave function using piecewise polynomial basis functions.
 
 Let $\Omega \subset \mathbb{R}^{d} (d=1,2,3)$ denote the computational domain with boundary $ \partial\Omega$. The unknown wave function is sought in the Sobolev space
@@ -396,49 +394,6 @@ Find $\Psi (\cdot, t) \in H_0^1(\Omega)$ such that
 where $ a(\Psi,\chi) = \frac{\hbar^2}{2m} (\nabla \Psi,\nabla \chi) + (V\Psi,\chi)$ is the bilinear form representing the Hamiltonian components. This variational equation forms the mathematical basis for the finite element discretization of the Schrödinger equation.
 
 
-\begin{thebibliography}{99}
-	
-	\bibitem{Hotta2020}
-	S. Hotta, \emph{Mathematical Physical Chemistry: Practical and Intuitive Methodology}, 2nd ed. Singapore: Springer Singapore, 2020. doi: 10.1007/978-981-15-2225-3.
-	
-	\bibitem{Mezzetti2021}
-	G. Mezzetti, \emph{Introduction to the Schr\"odinger Equation and an Application to the Stock Market}, Master's thesis, Luiss Guido Carli University, Rome, Italy, 2021. [Online]. Available: https://tesi.luiss.it/33247/. Supervisor: F. Gozzi.
-	
-	\bibitem{Becerril2008}
-	R. Becerril, F. S. Guzm\'an, A. Rend\'on-Romero, and S. Valdez-Alvarado,  
-	“Solving the time-dependent Schr\"odinger equation using finite difference methods,”  
-	\emph{Revista Mexicana de F\'isica E}, vol. 54, no. 2, pp. 120--132, 2008.
-	
-	\bibitem{Sudiarta2007}
-	I. W. Sudiarta and D. J. W. Geldart,  
-	“Solving the Schr\"odinger equation using the finite difference time domain method,”  
-	\emph{Journal of Physics A: Mathematical and Theoretical}, vol. 40, no. 8, pp. 1885--1900, 2007. doi: 10.1088/1751-8113/40/8/013.
-	
-	\bibitem{Han2007}
-	H. Han,  
-	“A finite-difference method for the one-dimensional time-dependent Schr\"odinger equation on unbounded domain,”  
-	\emph{Journal of Computational and Applied Mathematics}, 2007. doi: 10.1016/j.cam.2006.10.038.
-	
-	\bibitem{Zienkiewicz2005}
-	O. C. Zienkiewicz, R. L. Taylor, and J. Z. Zhu,  
-	\emph{The Finite Element Method: Its Basis and Fundamentals}, 6th ed. Amsterdam: Elsevier Butterworth-Heinemann, 2005.
-	
-	\bibitem{EsenTasbozan2017}
-	A. Esen and O. Tasbozan,  
-	“Numerical solution of time fractional Schr\"odinger equation by using quadratic B-spline finite elements,”  
-	\emph{Annales Mathematicae Silesianae}, vol. 31, no. 1, pp. 83--98, 2017. doi: 10.1515/amsil-2016-0015.
-	
-	\bibitem{FanQi2015}
-	W. Fan and H. Qi,  
-	“An efficient finite element method for the two-dimensional nonlinear time-space fractional Schr\"odinger equation on an irregular convex domain,”  
-	\emph{Applied Mathematics and Computation}, vol. 259, pp. 12--26, 2015. doi: 10.1016/j.amc.2015.02.048.
-	
-	\bibitem{Gass1976}
-	I. T. Gass,  
-	“Solution of the Schr\"odinger wave equation in a space-time continuum by a finite element formulation,”  
-	\emph{International Journal for Numerical Methods in Engineering}, vol. 10, no. 1, pp. 1--15, 1976. doi: 10.1002/nme.1620100102.
-	
-\end{thebibliography}
 
 
 
@@ -461,50 +416,9 @@ where $ a(\Psi,\chi) = \frac{\hbar^2}{2m} (\nabla \Psi,\nabla \chi) + (V\Psi,\ch
 
 
 
-
-\section{PINN Method}
-
-\subsection{Neural Networks}
-The Artificial Neural Network (ANN) is a computational approach to modeling the biological neural 
-network's structure and functionality. ANNs are made up of connected units known as neurons,
-and these are organized in layers: there is an input layer, one or several hidden layers, and an output layer. 
-A weight is assigned to each link, defining the strength of the information transmission across it.
-
-In feedforward networks, information travels through successive layers from input to output,
-passing first through hidden layers. In each node, information enters and is processed,
-undergoing weighted addition and then nonlinear transformation with the use of an activation function. 
-The training process involves modifying the network's parameters according to a loss function using algorithms 
-for gradient descent such as backpropagation.
-
-Neural networks are universal function approximators, meaning that, given enough training samples, 
-they can approximate any continuous function. 
-As a result of their capacity to discover intricate non-linear links between inputs and outputs, 
-neural networks have found numerous applications in a variety of fields like image processing, text recognition, 
-scientific computation, and the resolution of differential equations.
-In the context of Physics-Informed Neural Networks (PINNs), neural networks are employed to 
-approximate the solution of a differential 
-equation while simultaneously satisfying the governing physical laws through additional c
-onstraints incorporated into the loss function.[1]
+\section{Physics-Informed Neural Networks}
 
 
-Mathematically, a feed-forward neural network can be understood as a composition of several functions. Each layer transforms the output of the previous layer until the final output is produced. If the network has (L) layers, then the approximation can be written as
-
-$$F_L \circ F_{L-1} \circ \cdots \circ F_1(t,x)$$
-
-
-where each $(F_i)$ represents the transformation performed by the $(i)-th$ layer. This layered structure allows the network to build increasingly complex representations of the solution.
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=.4\textwidth]{images/Neural_Network.png}
-	\caption{Nerual Network}
-	\label{fig:nn}
-\end{figure}
-
-\vspace{3in}
-
-\subsection{PINNs}
 The conventional neural network is trained with the help of data only. If we provide some data samples to 
 the network, the network tries to minimize the error between the predicted output values and the observed
 values. Though this methodology has produced very good results in many different scenarios, it needs plenty 
@@ -546,13 +460,11 @@ which works as a regularization technique.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{images/pinn_framework.png}
+	\includegraphics[width=1\textwidth]{figures/pinn_framework.png}
 	\caption{PINN Framework} 
 	\label{fig:pinns}
 \end{figure}
 
-
-\subsection{Implenetation}
 
 The architecture of a Physics-Informed Neural Network is typically implemented based on a 
 fully connected feed-forward neural network, though in many cases they try many other architecture for NN. 
@@ -566,7 +478,7 @@ In other words, the network represents the function
 \begin{equation}
 	u_\theta(x,t) \approx u(x,t)
 \end{equation}
-where $(\theta)$ denotes all trainable parameters of the neural network, including weights and biases[lulu]
+where $(\theta)$ denotes all trainable parameters of the neural network, including weights and biases.
 
 In the traditional neural network, the output of the architecture is checked only with available data. However, the output from the architecture in a PINN is
 further taken to the physics-based part of the algorithm. 
@@ -580,14 +492,13 @@ compute the derivatives required in the PDE, such as
 	\frac{\partial^2 u_\theta}{\partial x^2}.
 \end{equation}
 
-\cite{Raissi2019}
-
 
 
 To evaluate how well the governing equation is satisfied, 
 PINNs introduce a set of collocation points inside the computational domain. 
 These points are sampled throughout the domain and are not necessarily 
 associated with any observed data. Let the collocation points be denoted by
+
 ${(x_f^i,t_f^i)}_{i=1}^{N_f}$
 
 where $(N_f)$ represents the number of collocation points. 
@@ -596,7 +507,7 @@ prediction violates the governing
 equation at that point. Consequently, the network parameters are 
 adjusted to reduce this error. One important advantage of this approach is 
 that PINNs are mesh-free methods and therefore do not require the computational mesh used by traditional 
-numerical techniques such as the Finite Element Method or Finite Difference Method. \cite{Raissi2019,Cuomo2022}
+numerical techniques such as the Finite Element Method or Finite Difference Method\cite{raissiPhysicsinformedNeuralNetworks2019} \cite{cuomoScientificMachineLearning2022}.
 
 
 The learning process of a PINN is controlled through a loss function that combines 
@@ -618,7 +529,7 @@ evaluates how well the governing differential equation is
 satisfied at the collocation points. The boundary loss enforces 
 the prescribed boundary conditions, while the initial loss 
 ensures that the initial conditions are satisfied. Together, 
-these terms guide the network toward a physically meaningful solution.[raissi2019]
+these terms guide the network toward a physically meaningful solution.
 More specifically, the physics loss is often defined as the mean squared value of 
 the PDE residual evaluated at all collocation points:
 \begin{equation}
@@ -643,7 +554,7 @@ if observational data are available, the data loss can be written as
 	\right|^2,
 \end{equation}
 
-where $(u^i)$ denotes the observed value of the solution at the point $((x_u^i,t_u^i))$. [raissi2019]
+where $(u^i)$ denotes the observed value of the solution at the point $((x_u^i,t_u^i))$.
 
 
 After the total loss function is constructed, an optimization algorithm such 
@@ -652,11 +563,8 @@ During each training iteration, the gradients of the loss function with
 respect to the network parameters are computed using backpropagation. 
 The optimization process continues until the total loss reaches a sufficiently 
 small value, indicating that the neural network simultaneously fits the available 
-data and satisfies the governing physical laws. \cite{Lu2021}
+data and satisfies the governing physical laws.
 
-
-
-\subsection{The Schrödinger Equation and Physics-Informed Neural Networks}
 
 The Schrödinger equation is the fundamental equation of quantum mechanics and 
 describes the evolution of a quantum system through its wave function. In its 
@@ -689,9 +597,9 @@ equation directly into the loss function, PINNs can learn
 solutions that satisfy both observational data and the 
 underlying physical laws. This capability makes PINNs particularly
 attractive for solving Schrödinger-type equations, where accurate 
-approximations of wave functions are required. \cite{Wang2021}
+approximations of wave functions are required \cite{wangDatadrivenRogueWaves2021}. 
 
-\subsection{Problem Statement}
+\subsection{PINN Formulation for the Schrödinger Equation}
 
 In this project, we consider the one-dimensional time-dependent 
 Schrödinger equation with a harmonic potential
@@ -732,7 +640,8 @@ incorporated into the loss function. The network
 parameters are optimized such that the predicted 
 solution satisfies both the differential equation 
 and the prescribed initial and boundary conditions.
-\subsection{Initial and Boundary Conditions}
+
+
 To obtain a unique solution of the Schrödinger equation, 
 appropriate initial and boundary conditions must be specified.
 In this work, the spatial domain is defined as
@@ -808,9 +717,14 @@ consistent approximation of the wave function throughout
 the spatio-temporal domain.
 
 
-\subsection{PINN Formulation for the Schrödinger Equation}
 
-To solve the time-dependent Schrödinger equation using Physics-Informed Neural Networks (PINNs), the complex-valued wave function is first decomposed into its real and imaginary components. Thus, the solution is represented as
+To solve the time-dependent 
+
+
+Schrödinger equation using Physics-Informed 
+Neural Networks (PINNs), 
+the complex-valued wave function is first decomposed into its real and imaginary components. 
+Thus, the solution is represented as
 
 \begin{equation}
 	\psi(x,t)=u(x,t)+i\,v(x,t)
@@ -885,9 +799,13 @@ Using automatic differentiation, the neural network computes the required deriva
 	V(x)u
 \end{equation}
 
-If the neural network exactly satisfies the Schrödinger equation, both residual functions vanish throughout the computational domain. Therefore, the objective of the PINN is to minimize these residuals while simultaneously satisfying the prescribed initial and boundary conditions.
+If the neural network exactly satisfies the Schrödinger equation, both residual functions 
+vanish throughout the computational domain. Therefore, the objective of the PINN is to 
+minimize these residuals while simultaneously satisfying the prescribed initial and boundary conditions.
 
-To enforce the governing equation, a set of collocation points is sampled inside the spatio-temporal domain. At these points, the residuals $f_u$ and $f_v$ are evaluated and incorporated into the loss function. The resulting physics loss is given by
+To enforce the governing equation, a set of collocation points is sampled inside the 
+spatio-temporal domain. At these points, the residuals $f_u$ and $f_v$ are evaluated 
+and incorporated into the loss function. The resulting physics loss is given by
 
 \begin{equation}
 	\mathcal{L}_{\mathrm{PDE}}
@@ -903,7 +821,8 @@ To enforce the governing equation, a set of collocation points is sampled inside
 
 where $N_f$ denotes the number of collocation points.
 
-The total loss function combines the physics loss with the losses associated with the initial conditions, boundary conditions, and available reference data. Therefore,
+The total loss function combines the physics loss with the losses associated with the initial conditions, 
+boundary conditions, and available reference data. Therefore,
 
 \begin{equation}
 	\mathcal{L}
@@ -918,25 +837,12 @@ The total loss function combines the physics loss with the losses associated wit
 \end{equation}
 
 where the coefficients $\lambda_{\mathrm{PDE}}$, $\lambda_{\mathrm{IC}}$, $\lambda_{\mathrm{BC}}$, and $\lambda_{\mathrm{Data}}$ control the contribution of each component during training.
-\subsection{Experimetal Setup}
 
-The Physics-Informed Neural Network used in this work is implemented as a fully connected feed-forward neural network. The input layer receives the spatial coordinate $x$ and the time variable $t$, while the output layer predicts the real and imaginary components of the wave function, $u_\theta(x,t)$ and $v_\theta(x,t)$. Consequently, the network has two input neurons and two output neurons.
 
-To approximate the solution of the Schrödinger equation, the network consists of four hidden layers with 64 neurons in each layer. The hyperbolic tangent ($\tanh$) activation function is employed throughout the hidden layers. This activation function is commonly used in PINN applications because it is smooth, differentiable, and well suited for automatic differentiation. The network weights are initialized using the Glorot normal initialization method, which helps stabilize the training process and improves convergence.
-
-During training, collocation points are sampled throughout the computational domain to enforce the governing differential equation. Additional points are selected on the initial surface and domain boundaries to impose the prescribed initial and boundary conditions. Furthermore, reference solution data are incorporated into the training process to improve the accuracy of the learned solution.
-
-The training procedure begins with a forward pass through the neural network. Given an input pair $(x,t)$, the network predicts the corresponding values of $u_\theta(x,t)$ and $v_\theta(x,t)$. Automatic differentiation is then used to compute the required derivatives appearing in the Schrödinger equation, including $u_t$, $v_t$, $u_{xx}$, and $v_{xx}$. These derivatives are subsequently used to evaluate the PDE residuals and the corresponding loss terms.
-
-The total loss function is obtained by combining the physics loss, initial-condition loss, boundary-condition loss, and data loss. Backpropagation is then employed to compute the gradients of the loss function with respect to the trainable parameters of the network. These gradients are used to iteratively update the weights and biases until the network converges to a satisfactory solution.
-
-To optimize the network parameters, a two-stage training strategy is adopted. In the first stage, the Adam optimizer is used to rapidly explore the parameter space and obtain a reasonable approximation of the solution. Adam is particularly effective during the early stages of training because of its adaptive learning-rate mechanism. In the second stage, the L-BFGS optimizer is employed to further refine the solution and improve convergence. This hybrid optimization strategy is widely used in PINN applications because it combines the robustness of Adam with the high-accuracy convergence properties of L-BFGS.
-
-After training is completed, the resulting neural network provides an approximation of the wave function throughout the entire spatio-temporal domain. The accuracy of the learned solution is assessed by comparing the PINN predictions with the reference numerical solution and evaluating the relative $L_2$ error.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{images/SCH_diagram.png}
+	\includegraphics[width=1\textwidth]{figures/SCH_diagram.png}
 	\caption{Diagram of solving Schrodinger with PINN}
 	\label{fig:sch1}
 \end{figure}
@@ -944,67 +850,505 @@ After training is completed, the resulting neural network provides an approximat
 
 \section{Results and Discussion}
 
-This section presents the numerical results obtained using the proposed Physics-Informed Neural Network (PINN) for solving the one-dimensional time-dependent Schrödinger equation with a harmonic potential. The performance of the network is evaluated in terms of the training convergence and the predicted probability density of the wave function.
+The performance of the proposed physics-informed neural network was evaluated from four complementary perspectives: training 
+convergence, agreement with the finite-difference reference solution, satisfaction of the governing 
+differential equation, and conservation of the wave-function norm. The results demonstrate that the 
+trained network accurately reproduced the spatio-temporal evolution of the wave function while 
+maintaining small equation residuals and satisfactory physical consistency throughout the 
+computational domain.
 
-\subsection{Training Performance}
+The optimization process produced a substantial reduction in all components of the loss 
+function. During the first training stage, the Adam optimizer rapidly moved the network 
+parameters toward a suitable approximation of the solution. The subsequent L-BFGS stage 
+further refined the parameters and reduced the remaining error. This two-stage strategy 
+was particularly effective because Adam provided a stable initial approximation, while 
+L-BFGS improved the final satisfaction of the physical and observational constraints.
 
-The network was trained using a two-stage optimization strategy. The Adam optimizer was first employed to obtain a suitable initial approximation of the solution, after which the L-BFGS optimizer was used to further refine the network parameters. This hybrid optimization strategy resulted in rapid convergence and a significant reduction in the overall loss.
+The total loss was defined as the sum of the PDE, boundary-condition, initial-condition, and 
+reference-data contributions:
 
-After the Adam optimization stage, the total training loss decreased from approximately \(7.40 \times 10^{-3}\) to \(2.99 \times 10^{-6}\) following the L-BFGS optimization stage. The continuous reduction of the loss throughout training indicates that the neural network successfully learned the governing physics while satisfying the prescribed initial and boundary conditions. The final training and testing losses were nearly identical, suggesting that the network generalized well over the computational domain without noticeable overfitting.
+\begin{equation}
+	\mathcal{L}_{\mathrm{total}}
+	=
+	\mathcal{L}_{\mathrm{PDE}}
+	+
+	\mathcal{L}_{\mathrm{BC}}
+	+
+	\mathcal{L}_{\mathrm{IC}}
+	+
+	\mathcal{L}_{\mathrm{data}}.
+\end{equation}
 
-\subsection{Probability Density Distribution}
+All four grouped loss components decreased by several orders of magnitude during training. The boundary-condition loss reached the smallest final value, indicating that the homogeneous boundary conditions were satisfied with high accuracy. The PDE loss remained the largest component at the end of optimization because the governing equation had to be enforced throughout the entire space-time domain rather than only along the boundaries or initial line. The total training and testing losses followed nearly identical convergence patterns, indicating consistent performance across the sampled training and testing points. This agreement, however, should be interpreted as consistency on the sampled sets rather than definitive proof that overfitting is impossible.
 
-Figure~\ref{fig:surface_density} illustrates the predicted probability density $|\psi(x,t)|^2$, over the entire spatio-temporal domain. The solution remains localized around the center of the spatial domain throughout the simulation. As time progresses, the probability density exhibits smooth temporal evolution while maintaining its overall symmetry. The obtained solution is continuous and free of numerical oscillations, demonstrating the capability of the PINN to approximate the solution over the entire computational domain.
+The complete convergence history, including the transition from Adam to L-BFGS, is illustrated in Figure~\ref{fig:loss_convergence}.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
-	\includegraphics[width=7cm]{images/surface_density.png}
-	\caption{Surface plot of the predicted probability density \(|\psi(x,t)|^2\).}
-	\label{fig:surface_density}
+	\includegraphics[width=0.92\textwidth]
+	{figures/figure_1_loss_convergence.png}
+	\caption{Convergence history of the total training and testing
+		losses and the individual PINN loss components. The vertical
+		dotted line indicates the transition from Adam to L-BFGS.}
+	\label{fig:loss_convergence}
 \end{figure}
 
-To further investigate the temporal evolution of the solution, the probability density was evaluated at several representative time instants, namely \(t=0\), \(0.25\), \(0.50\), \(0.75\), and \(1.00\). As shown in Figure~\ref{fig:selected_times}, the probability density evolves smoothly over time while preserving its symmetric profile about the center of the spatial domain.
+At the end of training, the total loss reached
 
-\begin{figure}[h]
+\begin{equation}
+	\mathcal{L}_{\mathrm{total}}
+	=
+	2.4256\times10^{-6}.
+\end{equation}
+
+The combined PDE loss was \(1.8756\times10^{-6}\), accounting for approximately \(77.3\%\) of the 
+remaining total loss. By comparison, the boundary, initial-condition, and reference-data 
+losses were \(3.0547\times10^{-8}\), \(2.3427\times10^{-7}\), and \(2.8515\times10^{-7}\), 
+respectively. These values indicate that the network satisfied the auxiliary constraints more 
+accurately than the differential equation itself, which is expected because the PDE residual 
+must be minimized over the full interior of the computational domain.
+
+The real and imaginary PDE losses were similar, suggesting balanced enforcement of the two 
+coupled equations. A greater difference was observed between the initial-condition losses 
+of the two components, with the imaginary-component loss being larger than the 
+real-component loss. Nevertheless, both values remained small and did not prevent the 
+network from achieving high global accuracy. The final individual and grouped loss values 
+are summarized in Table~\ref{tab:loss_components}.
+
+\begin{table}[htbp]
 	\centering
-	\includegraphics[width=7.5cm]{images/selected_times.png}
-	\caption{Probability density \(|\psi(x,t)|^2\) at selected time instants.}
+	\caption{Final individual and grouped PINN loss components.}
+	\label{tab:loss_components}
+	\begin{tabular}{lc}
+		\hline
+		\textbf{Loss component} & \textbf{Final value} \\
+		\hline
+		Real PDE residual loss
+		& \(9.4813\times10^{-7}\) \\
+		
+		Imaginary PDE residual loss
+		& \(9.2750\times10^{-7}\) \\
+		
+		Boundary loss for \(u\)
+		& \(1.7885\times10^{-8}\) \\
+		
+		Boundary loss for \(v\)
+		& \(1.2662\times10^{-8}\) \\
+		
+		Initial-condition loss for \(u\)
+		& \(2.9938\times10^{-8}\) \\
+		
+		Initial-condition loss for \(v\)
+		& \(2.0433\times10^{-7}\) \\
+		
+		Reference-data loss for \(u\)
+		& \(1.4485\times10^{-7}\) \\
+		
+		Reference-data loss for \(v\)
+		& \(1.4029\times10^{-7}\) \\
+		\hline
+		Combined PDE loss
+		& \(1.8756\times10^{-6}\) \\
+		
+		Combined boundary loss
+		& \(3.0547\times10^{-8}\) \\
+		
+		Combined initial-condition loss
+		& \(2.3427\times10^{-7}\) \\
+		
+		Combined reference-data loss
+		& \(2.8515\times10^{-7}\) \\
+		
+		Total training loss
+		& \(2.4256\times10^{-6}\) \\
+		\hline
+	\end{tabular}
+	
+\end{table}
+
+The accuracy of the trained network was further evaluated by comparing its predicted probability density with the reference solution generated using the finite-difference method. The probability density was calculated from the real and imaginary components as
+
+\begin{equation}
+	\rho(x,t)
+	=
+	|\psi(x,t)|^2
+	=
+	u(x,t)^2+v(x,t)^2.
+\end{equation}
+
+Close agreement was obtained between the PINN and FDM probability-density fields throughout the entire computational domain. Both methods produced the same overall spatio-temporal structure, including the central concentration of the wave packet and its gradual broadening over the simulated time interval. No visible displacement or distortion of the principal density structure was observed in the PINN prediction.
+
+The pointwise error was calculated using
+
+\begin{equation}
+	E_{\rho}(x,t)
+	=
+	\left|
+	\rho_{\mathrm{PINN}}(x,t)
+	-
+	\rho_{\mathrm{FDM}}(x,t)
+	\right|.
+\end{equation}
+
+The largest errors were concentrated near the central region, where the probability density was greatest and changed most rapidly in space and time. Much smaller errors occurred toward the boundaries because the wave-function magnitude approached zero in those regions. This spatial distribution is reasonable because reproducing the height, width, and temporal evolution of the central wave packet is more difficult than approximating nearly zero values far from its centre.
+
+The reference field, PINN prediction, and corresponding absolute-error distribution are compared in Figure~\ref{fig:density_comparison}. An identical colour scale was used for the reference and predicted density fields so that their visual agreement could be assessed directly.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]
+	{figures/figure_2_density_comparison.png}
+	\caption{Comparison of the FDM reference probability density,
+		the PINN prediction, and the pointwise absolute density error
+		throughout the space-time domain.}
+	\label{fig:density_comparison}
+\end{figure}
+
+The global relative \(L_2\) error was calculated as
+
+\begin{equation}
+	\varepsilon_q
+	=
+	\frac{
+		\left\|
+		q_{\mathrm{PINN}}-q_{\mathrm{FDM}}
+		\right\|_2
+	}{
+		\left\|
+		q_{\mathrm{FDM}}
+		\right\|_2
+	},
+\end{equation}
+
+where \(q\) represents \(u\), \(v\), \(\psi\), or \(\rho\). The resulting relative error of the complete complex wave function was
+
+\begin{equation}
+	\varepsilon_{\psi}
+	=
+	1.5462\times10^{-3},
+\end{equation}
+
+corresponding to approximately \(0.155\%\). The relative error of the probability density was even smaller:
+
+\begin{equation}
+	\varepsilon_{\rho}
+	=
+	9.7108\times10^{-4},
+\end{equation}
+
+which corresponds to approximately \(0.097\%\). Therefore, the global density error remained below one tenth of one percent.
+
+The real component had a relative error of \(1.1709\times10^{-3}\), while the imaginary component had a 
+larger relative error of \(3.2844\times10^{-3}\). This difference does not necessarily 
+indicate a substantial weakness in the prediction of \(v\), because a component-wise 
+relative error also depends on the norm of the corresponding reference component. 
+The error of the complete complex wave function is consequently a more representative 
+measure of the overall solution quality.
+
+The mean absolute density error and 
+root-mean-square density error were \(1.2451\times10^{-4}\) and \(2.5485\times10^{-4}\), 
+respectively. The maximum pointwise density error was \(1.4054\times10^{-3}\). The fact 
+that the mean and RMS errors were considerably smaller than the maximum error indicates that the 
+largest discrepancies were localized rather than distributed throughout the domain. The complete 
+accuracy measures are reported in Table~\ref{tab:accuracy_metrics}.
+
+\begin{table}[htbp]
+	\centering
+	\caption{Quantitative errors between the PINN and FDM solutions.}
+	\label{tab:accuracy_metrics}
+	\begin{tabular}{lc}
+		\hline
+		\textbf{Error measure} & \textbf{Value} \\
+		\hline
+		Relative \(L_2\) error of \(u\)
+		& \(1.1709\times10^{-3}\) \\
+		
+		Relative \(L_2\) error of \(v\)
+		& \(3.2844\times10^{-3}\) \\
+		
+		Relative \(L_2\) error of \(\psi\)
+		& \(1.5462\times10^{-3}\) \\
+		
+		Relative \(L_2\) error of \(|\psi|^2\)
+		& \(9.7108\times10^{-4}\) \\
+		
+		Density mean absolute error
+		& \(1.2451\times10^{-4}\) \\
+		
+		Density root-mean-square error
+		& \(2.5485\times10^{-4}\) \\
+		
+		Maximum absolute density error
+		& \(1.4054\times10^{-3}\) \\
+		\hline
+	\end{tabular}
+	
+\end{table}
+
+
+The full-field comparison was complemented by examining the probability-density profiles at representative time instants. This comparison provides a more detailed view of whether the network reproduced the local peak, width, symmetry, and spatial decay of the wave packet.
+
+At \(t=0\), the predicted density closely matched the prescribed initial profile. As time progressed, the central peak gradually decreased while the distribution became wider. This behaviour indicates a redistribution of the wave-function density over a broader spatial region. The reduction in peak height does not represent a loss of norm because the area under the density profile remained approximately constant.
+
+The PINN and FDM curves overlapped closely at
+
+\[
+t=0,\quad 0.25,\quad 0.50,\quad 0.75,\quad 1.00.
+\]
+
+The agreement was maintained not only near the maximum density but also along the tails of the distribution. Consequently, the network accurately reproduced both the amplitude and the spatial broadening of the solution over the complete temporal interval. These selected-time comparisons are presented in Figure~\ref{fig:selected_times}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]
+	{figures/figure_3_selected_times.png}
+	\caption{Comparison of the PINN and FDM probability-density
+		profiles at selected time instants.}
 	\label{fig:selected_times}
 \end{figure}
 
-The curves remain smooth and symmetric about \(x=0\), indicating that the physical characteristics of the solution are preserved throughout the simulation. Moreover, the gradual transition between successive time levels demonstrates that the neural network accurately captures the temporal evolution of the wave function without introducing noticeable numerical artifacts.
+The near-complete overlap of the curves is consistent with the small global density errors reported previously. More importantly, the line profiles confirm that the strong agreement observed in the heatmaps was not caused by colour-scale smoothing. The predicted and reference solutions remained close when compared directly as one-dimensional functions of the spatial coordinate.
 
-\subsection{Discussion}
 
-The obtained results demonstrate that the proposed PINN successfully approximates the solution of the one-dimensional time-dependent Schrödinger equation with high accuracy. The low final training loss, together with the smooth probability density distributions, indicates that the neural network satisfies both the governing differential equation and the prescribed initial and boundary conditions.
+Satisfaction of the governing equation was investigated by evaluating the two coupled residuals produced by the real-valued formulation of the Schrödinger equation:
 
-Furthermore, the predicted probability density exhibits physically consistent behavior throughout the computational domain. The absence of discontinuities and spurious oscillations suggests that automatic differentiation and the physics-informed loss function effectively guide the neural network toward a stable and physically meaningful solution.
+\begin{align}
+	f_u(x,t)
+	&=
+	u_t+\frac{1}{2}v_{xx}-V(x)v, \\
+	f_v(x,t)
+	&=
+	v_t-\frac{1}{2}u_{xx}+V(x)u.
+\end{align}
 
-Overall, these results confirm that Physics-Informed Neural Networks provide an effective framework for solving the time-dependent Schrödinger equation. By combining observational data with physics-based constraints, the proposed approach accurately reproduces the evolution of the quantum wave function while maintaining numerical stability throughout the simulation.
+For an exact solution, both residuals would be zero throughout the 
+computational domain. The trained PINN produced residuals that remained 
+small over most of the space-time region. Their magnitudes generally 
+occurred around \(10^{-3}\) or below, although several localized regions 
+reached values of several \(10^{-3}\).
 
-\begin{thebibliography}{99}
-	\bibitem{Cuomo2022}
-	S. Cuomo, V. Schiano di Cola, F. Giampaolo, G. Rozza, M. Raissi, and F. Piccialli,  
-	“Scientific machine learning through physics-informed neural networks: Where we are and what’s next,”  
-	\emph{Journal of Scientific Computing}, vol. 92, no. 3, Art. no. 88, 2022, doi: 10.1007/s10915-022-01939-z.
+The residual distributions contained curved low-value bands where 
+the signed residuals passed through zero. These structures do not represent discontinuities in the wave function. They result from plotting the absolute residual magnitude, which becomes very small wherever the signed residual changes sign.
+
+A logarithmic colour scale was used because the residual values covered several orders of magnitude. The resulting distributions of \(|f_u|\) and \(|f_v|\) are shown in Figure~\ref{fig:pde_residuals}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]
+	{figures/figure_4_pde_residuals.png}
+	\caption{Absolute values of the real and imaginary Schrödinger
+		equation residuals over the computational domain. A logarithmic
+		colour scale is used to display the residual magnitudes.}
+	\label{fig:pde_residuals}
+\end{figure}
+
+The mean absolute residuals were \(7.5442\times10^{-4}\) and \(7.5263\times10^{-4}\) for the 
+real and imaginary equations, respectively. Their RMS values were approximately \(1.0\times10^{-3}\), 
+whereas the maximum residuals were \(7.4639\times10^{-3}\) and \(6.7442\times10^{-3}\).
+
+These values are consistent with the final PDE loss. Since the PDE loss is based on squared 
+residuals, an RMS residual of approximately \(10^{-3}\) produces a squared contribution of 
+approximately \(10^{-6}\). The numerical agreement between the residual statistics and the 
+loss history confirms that the two diagnostics are internally consistent.
+
+The maximum values were approximately seven times greater than the corresponding RMS 
+residuals, showing that the remaining PDE mismatch was concentrated in relatively small 
+regions rather than spread uniformly across the domain. No extensive regions of persistently 
+large residual were observed, supporting the conclusion that the PINN satisfied the governing 
+physics globally. The residual statistics are summarized in Table~\ref{tab:residual_statistics}.
+
+\begin{table}[htbp]
+	\centering
+	\caption{Statistical measures of the real and imaginary PDE residuals.}
+	\label{tab:residual_statistics}
+	\begin{tabular}{lcc}
+		\hline
+		\textbf{Statistic} & \(\boldsymbol{f_u}\) & \(\boldsymbol{f_v}\) \\
+		\hline
+		Mean absolute residual
+		& \(7.5442\times10^{-4}\)
+		& \(7.5263\times10^{-4}\) \\
+		
+		RMS residual
+		& \(1.0379\times10^{-3}\)
+		& \(1.0209\times10^{-3}\) \\
+		
+		Maximum absolute residual
+		& \(7.4639\times10^{-3}\)
+		& \(6.7442\times10^{-3}\) \\
+		\hline
+	\end{tabular}
 	
-	\bibitem{Raissi2019}
-	M. Raissi, P. Perdikaris, and G. E. Karniadakis,  
-	“Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations,”  
-	\emph{Journal of Computational Physics}, vol. 378, pp. 686--707, 2019,  
-	doi: 10.1016/j.jcp.2018.10.045.
-	
-	\bibitem{Lu2021}
-	L. Lu, R. Pestourie, W. Yao, Z. Wang, F. Verdugo, and S. G. Johnson,  
-	“Physics-informed neural networks with hard constraints for inverse design,”  
-	\emph{SIAM Journal on Scientific Computing}, vol. 43, no. 6, pp. B1105--B1132, 2021,  
-	doi: 10.1137/21M1397908.
-	
-	\bibitem{Wang2021}
-	S. Wang, Y. Teng, and P. Perdikaris,  
-	“Understanding and mitigating gradient flow pathologies in physics-informed neural networks,”  
-	\emph{SIAM Journal on Scientific Computing}, vol. 43, no. 5, pp. A3055--A3081, 2021,  
-	doi: 10.1137/20M1318043.
+\end{table}
 
-\end{thebibliography}
+
+An additional assessment of physical consistency was performed 
+by calculating the integrated probability density:
+
+\begin{equation}
+	N(t)
+	=
+	\int_{-5}^{5}
+	|\psi(x,t)|^2\,dx.
+\end{equation}
+
+For Schrödinger evolution under a real potential, this quantity 
+should remain constant in time. The finite-difference reference 
+solution preserved the norm almost exactly, producing a horizontal 
+curve over the full temporal interval. This behaviour is expected 
+because the matrix-exponential time evolution used by the reference 
+solver preserves the discrete wave-function norm to numerical precision.
+
+The PINN result was also nearly constant but displayed small 
+oscillations around the reference level. These fluctuations arise 
+because the neural network satisfies the governing equation and 
+constraints approximately rather than exactly. Importantly, no 
+systematic increasing or decreasing trend was observed, indicating 
+that the model did not experience substantial accumulated norm drift.
+
+The initial norm was approximately \(1.2533\), rather than unity. Therefore, the plotted quantity should be described as the wave-function norm rather than total probability. This value indicates that the initial wave function used in the experiment was not normalized to one. Although the lack of normalization does not affect the comparison between the PINN and FDM solutions, normalization would be preferable for a standard quantum-mechanical interpretation.
+
+The temporal evolution of the integrated density is displayed in Figure~\ref{fig:norm_conservation}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.88\textwidth]
+	{figures/figure_5_probability_conservation.png}
+	\caption{Temporal evolution of the wave-function norm obtained
+		from the PINN and FDM solutions.}
+	\label{fig:norm_conservation}
+\end{figure}
+
+The maximum absolute PINN norm deviation was
+
+\begin{equation}
+	2.9667\times10^{-4},
+\end{equation}
+
+corresponding to a maximum relative deviation of
+
+\begin{equation}
+	2.3671\times10^{-4}
+	\approx 0.0237\%.
+\end{equation}
+
+The finite-difference norm deviation was approximately \(7.4303\times10^{-13}\) in relative terms, 
+which is effectively at machine precision. The maximum difference between the PINN and 
+FDM norms was \(2.8269\times10^{-4}\). These results indicate that the PINN preserved the 
+norm with high accuracy despite not imposing exact norm conservation as a separate training 
+constraint. The corresponding conservation measures are provided in Table~\ref{tab:norm_conservation}.
+
+\begin{table}[htbp]
+	\centering
+	\caption{Wave-function norm conservation for the PINN and FDM solutions.}
+	\label{tab:norm_conservation}
+	\begin{tabular}{lc}
+		\hline
+		\textbf{Norm measure} & \textbf{Value} \\
+		\hline
+		Initial PINN norm
+		& \(1.25330016\) \\
+		
+		Minimum PINN norm
+		& \(1.25307344\) \\
+		
+		Maximum PINN norm
+		& \(1.25359683\) \\
+		
+		Maximum absolute PINN norm deviation
+		& \(2.9667\times10^{-4}\) \\
+		
+		Maximum relative PINN norm deviation
+		& \(2.3671\times10^{-4}\) \\
+		
+		Initial FDM norm
+		& \(1.25331414\) \\
+		
+		Maximum absolute FDM norm deviation
+		& \(9.3126\times10^{-13}\) \\
+		
+		Maximum relative FDM norm deviation
+		& \(7.4303\times10^{-13}\) \\
+		
+		Maximum PINN--FDM norm difference
+		& \(2.8269\times10^{-4}\) \\
+		\hline
+	\end{tabular}
+	
+\end{table}
+
+
+The combined numerical evidence demonstrates that the proposed PINN 
+accurately approximated the solution of the time-dependent Schrödinger 
+equation over the considered domain. Stable convergence was achieved 
+through the hybrid Adam and L-BFGS optimization procedure, resulting 
+in a final loss of \(2.4256\times10^{-6}\). The boundary and initial 
+conditions were satisfied accurately, while the PDE residual formed 
+the largest remaining contribution to the loss.
+
+Strong agreement was obtained between the PINN and finite-difference 
+solutions at both the field and profile levels. The relative \(L_2\) error of the c
+omplete wave function was approximately \(0.155\%\), while the corresponding density 
+error was approximately \(0.097\%\). The maximum pointwise density error remained 
+limited to \(1.4054\times10^{-3}\), and the much smaller MAE and RMSE values showed 
+that this maximum discrepancy occurred only in localized regions.
+
+The residual analysis confirmed that the small prediction error was 
+accompanied by satisfactory enforcement of the governing equation. Both real and imaginary residuals 
+had RMS magnitudes of approximately \(10^{-3}\), which was consistent with their squared 
+loss contributions of approximately \(10^{-6}\). The close similarity between the residual 
+statistics of the two equations further indicated that neither component of the coupled 
+system was substantially less well represented.
+
+Physical consistency was also maintained throughout the simulation. The PINN preserved the 
+wave-function norm with a maximum relative deviation of only \(0.0237\%\). Although this 
+level of conservation was less exact than that of the finite-difference reference method, 
+it remained sufficiently small to confirm that the predicted evolution did not suffer from 
+significant artificial gain or loss of norm.
+
+Several limitations should nevertheless be acknowledged. The present model was evaluated 
+for one potential, one temporal interval, and one network configuration. In addition, reference-data 
+constraints were included during training, meaning that the proposed model represents a 
+data-assisted PINN rather than a completely data-free formulation. Further experiments should 
+therefore examine the performance of the model without reference data, with different numbers of 
+collocation points, and with alternative network depths and widths. Longer temporal intervals 
+and more complicated potentials would also provide a stronger assessment of generalization.
+
+The initial wave function should be normalized in future experiments so that the conserved 
+integral equals one and can be interpreted directly as total probability. An ablation study 
+comparing Adam-only training with the hybrid Adam--L-BFGS procedure would additionally clarify 
+the contribution of the second optimization stage. Despite these limitations, the current 
+results provide strong evidence that the proposed PINN formulation can accurately reproduce 
+the dynamics of the investigated Schrödinger system while satisfying the governing equation
+and preserving its principal integral property.
+
+
+
+\section{Conclusion}
+
+In this study, a physics-informed neural network was developed to solve the one-dimensional 
+time-dependent Schrödinger equation with a harmonic potential, and its predictions were 
+compared with a finite-difference reference solution. The numerical results showed a close 
+agreement between the two approaches over the entire space-time domain. The PINN reproduced 
+the evolution of the wave function and probability density with small relative errors, while 
+the low PDE residuals confirmed that the governing equation was satisfied accurately. The 
+model also preserved the wave-function norm with only a small deviation, although the finite-difference 
+method achieved conservation to near machine precision.
+
+Overall, the results demonstrate that the proposed data-assisted PINN is a reliable approach for 
+approximating the time-dependent Schrödinger equation. While the finite-difference method remains 
+highly accurate for the structured one-dimensional problem considered here, the PINN provides a 
+continuous and flexible approximation that can be evaluated at arbitrary points without constructing a 
+new spatial grid. The ideas presented in this work may therefore support the further development of 
+physics-informed models for more complex quantum systems, including problems with time-dependent 
+potentials, longer simulation intervals, and higher-dimensional domains. Future studies should also 
+examine purely physics-informed formulations without reference data and investigate the influence of 
+network architecture, collocation-point distribution, and optimization strategy on the accuracy and 
+stability of the solution.
+
+\newpage
+\nocite{*}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
 \end{document}
