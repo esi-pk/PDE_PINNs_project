@@ -14,7 +14,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{fancyhdr}
-
+\usepackage{xfrac}
 
 
 \begin{document}
@@ -30,7 +30,6 @@
 			\vspace*{3cm}
 			\large{\textbf{Mohsen Peykanro}}\\
 			\large{\textbf{Ehsan Pichka}}\\
-			\large{\textbf{Arshia Soleymani}}\\
 			\vspace*{3cm}
 			\large{\textbf{Advisor:}}\\
 			\large{\textbf{Dr. Mahboubeh Molavi Arabshahi}}\\
@@ -55,16 +54,16 @@ The Schrödinger equation is a direct consequence of the discovery of quanta in 
 \begin{equation}  \label{eq:1905}
 	E = h \nu = \hbar \omega
 \end{equation} 
-where $E$ denotes energy, $h$ is the Plnack constant ($6.626 \times 10^{-34} \,\text{J·s}$) and $\nu$ is frequency of light. so now we can define the reduced Planck constant as $\hbar = \frac{h}{2 \pi}$ and $\omega = 2 \pi \nu$ as angular frequency. 
+where $E$ denotes energy, $h$ is the Plnack constant ($6.626 \times 10^{-34} \,\text{J·s}$) and $\nu$ is frequency of light. so now we can define the reduced Planck constant as $\hbar = \sfrac{h}{2 \pi}$ and $\omega = 2 \pi \nu$ as angular frequency. 
 Later on, Einstein in 1917 concluded that momentum of light quantum $p$ is:
 \begin{equation}  \label{eq:1917}
 	 p = \frac{E}{c} = \frac{\hbar \omega}{c} = \hbar k 
 \end{equation}
 $k$ is called wavenumber and is defind as $ k = 2 \pi \lambda$, where $\lambda$ is wavelength of light in vacuum.
 
-In 1923, Arthur Compton conducted experiments investigating how incident X-ray beams were scattered by matter, such as graphite and copper. He discovered a systematic redshift (an increase in wavelength) in the scattered X-rays and they call it Compton effect. Moreover he found that the shift in wavelengths depended only on the scattering angle regardless of quality of material of a scatterer $\Delta \lambda = \frac{h}{m_e c} (1 - \cos \theta)$ where $\Delta \lambda$ means a Shift in wave length of scatterd beam, $m_e$ is a rest mass of an electron (mass that is independent of the motion of the particle) and $\theta$ is a scatering angle of the beam. The constant $\frac{h}{m_e c} $ is defined as the electron Compton wavelength ($\lambda_e$) approximately $ 2.426 \times 10^{-12} $ meters.
+In 1923, Arthur Compton conducted experiments investigating how incident X-ray beams were scattered by matter, such as graphite and copper. He discovered a systematic redshift (an increase in wavelength) in the scattered X-rays and they call it Compton effect. Moreover he found that the shift in wavelengths depended only on the scattering angle regardless of quality of material of a scatterer $\Delta \lambda = \sfrac{h}{m_e c} (1 - \cos \theta)$ where $\Delta \lambda$ means a Shift in wave length of scatterd beam, $m_e$ is a rest mass of an electron (mass that is independent of the motion of the particle) and $\theta$ is a scatering angle of the beam. The constant $\sfrac{h}{m_e c} $ is defined as the electron Compton wavelength ($\lambda_e$) approximately $ 2.426 \times 10^{-12} $ meters.
 
-In 1924, Louis de Broglie Encouraged by the success of Einstein and Compton in proving that waves (light) could behave like particles and theorized that the reverse must also be true, in other word matter particles must possess a wave nature. De Broglie essentially reversed the relationship of (\ref{eq:1905}) and (\ref{eq:1917}) such that $\omega = \frac{E}{\hbar}, \quad k = \frac{p}{\hbar} \quad \text{or} \quad \lambda = \frac{h}{p}$ where $p$ equals $|p|$ and $\lambda$ is a wavelength of a corpuscular beam(a directional stream of tiny particles). this is called de Broglie wavelength(matter wave). this equation implies that if we are able to determine the wavelength of the corpuscular beam experimentally, we can decide a magnitude of momentum accordingly.
+In 1924, Louis de Broglie Encouraged by the success of Einstein and Compton in proving that waves (light) could behave like particles and theorized that the reverse must also be true, in other word matter particles must possess a wave nature. De Broglie essentially reversed the relationship of (\ref{eq:1905}) and (\ref{eq:1917}) such that $\omega = \sfrac{E}{\hbar}, \quad k = \sfrac{p}{\hbar} \quad \text{or} \quad \lambda = \sfrac{h}{p}$ where $p$ equals $|p|$ and $\lambda$ is a wavelength of a corpuscular beam(a directional stream of tiny particles). this is called de Broglie wavelength(matter wave). this equation implies that if we are able to determine the wavelength of the corpuscular beam experimentally, we can decide a magnitude of momentum accordingly.
 
 For a matter wave, the phase velocity $v_p$ is shown to be greater than $c$, while the group velocity $v_g$, which represents the propagation velocity of a wave packet (and thus the particle's velocity), is less than $c$. Their relationship is defined by $v_p v_g = c^2$. Therefore, a particle velocity must not exceed $c$.
 \begin{figure}[h!]
@@ -78,24 +77,12 @@ For a matter wave, the phase velocity $v_p$ is shown to be greater than $c$, whi
 	}
 
 \end{figure}
+\\
+\\
+\\
 
 \subsection{Time-Dependent Schrödinger Equation}
-The derivation starts with the standard wave equation 
-\begin{equation}
-	\nabla^2 \Psi = \frac{1}{v^2} \frac{\partial^2 \Psi}{\partial t^2}
-\end{equation}
-where $\Psi$ is an arbitrary function of a physical quantity relevant to propagation of a wave(shape of a wave), $v$ is a phase velocity of wave, $ \nabla^2$ is called Laplacian and is defined as
-\begin{equation}
-	\nabla^2 \equiv \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}
-\end{equation}
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=7.5cm]{images/Fig3}
-	\includegraphics[width=7.5cm]{images/Fig4}
-	\caption{Plane waves in two and three dimensions}
-\end{figure}
-
+The derivation starts with the standard wave equation $\nabla^2 \Psi = \frac{1}{\nu ^2} \frac{\partial^2 \Psi}{\partial t^2}$ where $\Psi$ is an arbitrary function of a physical quantity relevant to propagation of a wave(shape of a wave), $\nu$ is a phase velocity of wave, $\nabla^2$ is called Laplacian and is defined as $\nabla^2 \equiv \sfrac{\partial^2}{\partial x^2} + \sfrac{\partial^2}{\partial y^2} + \sfrac{\partial^2}{\partial z^2}$
 One of the special solutions for wave equation is called a plane wave and its expressed as
 \begin{equation}
 	\Psi = \Psi_0 e^{i(k \cdot x - \omega t)} = \Psi_0 [ \cos (k \cdot x - \omega t) + i \sin (k \cdot x - \omega t) ]
@@ -105,16 +92,19 @@ where $x$ denotes a position vector of a three-dimensional Cartesian coordinate.
 	\Psi = \Psi_0 e^{i(\frac{p}{h} \cdot x - \frac{E}{h} t)}, \quad 
 	p = \begin{pmatrix} e_1 \; e_2 \; e_3 \end{pmatrix} \begin{pmatrix} p_x \\ p_y \\ p_z \end{pmatrix}
 \end{equation}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=7.5cm]{images/Fig3}
+	\includegraphics[width=7.5cm]{images/Fig4}
+	\caption{Plane waves in two and three dimensions}
+\end{figure}
+
 taking partial differentiation with respect to $x$ we obtain
 \begin{equation}
 	\frac{\partial \Psi}{\partial x} = \frac{i}{\hbar} p_x \Psi_0 e^{i(\frac{p}{h} \cdot x - \frac{E}{h} t)} = \frac{i}{\hbar} p_x \Psi \quad \Rightarrow \quad
 	\frac{\hbar}{i} \frac{\partial \Psi}{\partial x} = p_x \Psi
 \end{equation}
-Similarly we have
-\begin{equation}
-	\frac{\hbar}{i} \frac{\partial \Psi}{\partial y} = p_y \Psi \quad \text{and} \quad \frac{\hbar}{i} \frac{\partial \Psi}{\partial z} = p_z \Psi
-\end{equation}
-Taking partial differentiation once more 
+Similarly we have $\frac{\hbar}{i} \frac{\partial \Psi}{\partial y} = p_y \Psi \quad \text{and} \quad \frac{\hbar}{i} \frac{\partial \Psi}{\partial z} = p_z \Psi$. Taking partial differentiation once more 
 \begin{equation}
 	\frac{\partial^2 \Psi}{\partial x^2} = (\frac{i}{\hbar} p_x)^2 \Psi_0 e^{i(\frac{p}{h} \cdot x - \frac{E}{h} t)} = - \frac{1}{\hbar^2} p_x^2 \Psi \quad \Rightarrow \quad
 	- \hbar^2 \frac{\partial^2 \Psi}{\partial x^2} = p_x^2 \Psi
@@ -137,26 +127,14 @@ If we subtract (\ref{eq:13}) and (\ref{eq:14}) we get
 \begin{equation} \label{eq:15}
 	i \hbar \frac{\partial \Psi}{\partial t} + \frac{\hbar ^2}{2m} \nabla^2 \Psi = (E - \frac{p^2}{2m}) \Psi
 \end{equation}
-Comparing these equations we find out that momentum $p$ becomes the operator $ \frac{\hbar}{i} \nabla$ and energy $E$ becomes the operator $ i \hbar \frac{\partial}{\partial t}$. Now if we substituting these operators into the classical energy conservation relation (Total energy = Kinetic energy + Potential energy) we have
-\begin{equation}
-	E = \frac{p^2}{2m} + V
-\end{equation}
-So now lets rewrite the equation (\ref{eq:15})
+Comparing these equations we find out that momentum $p$ becomes the operator $ \sfrac{\hbar}{i} \nabla$ and energy $E$ becomes the operator $ i \hbar \sfrac{\partial}{\partial t}$. Now if we substituting these operators into the classical energy conservation relation (Total energy = Kinetic energy + Potential energy) we have $E = \sfrac{p^2}{2m} + V$ So now lets rewrite the equation (\ref{eq:15})
 \begin{equation} \label{eq:TDSE}
 	i \hbar \frac{\partial \Psi}{\partial t} + \frac{\hbar ^ 2}{2m} \nabla^2 \Psi = V \Psi \quad \Rightarrow \quad
 	(- \frac{\hbar ^ 2}{2m} \nabla^2 + V) \Psi = i \hbar \frac{\partial \Psi}{\partial t}
 \end{equation}
 This is the Time-Dependent Schrödinger Equation (TDSE), a fundamental equation of quantum mechanics. 
 
-If we defind a following Hamiltonian operator $H$ (the sum of two components, the kinetic energy and the potential energy of a quantum system) as 
-\begin{equation}
-	H \equiv - \frac{\hbar^2}{2m} \nabla^2 + V 
-\end{equation}
-Then we have a shorthand representation such that
-\begin{equation}
-	H \Psi = i \hbar \frac{\partial \Psi}{\partial t}
-\end{equation}
-Since we want to associate the wave function with a single particle, it is reasonable to require the probability to find the electron anywhere in space to be exactly equal to one. Since this may not be the case for all $\Psi$, we introduce a normalization condition:
+If we defind a following Hamiltonian operator $H$ (the sum of two components, the kinetic energy and the potential energy of a quantum system) as $H \equiv - \sfrac{\hbar^2}{2m} \nabla^2 + V$ Then we have a shorthand representation such that $H \Psi = i \hbar \sfrac{\partial \Psi}{\partial t}$ Since we want to associate the wave function with a single particle, it is reasonable to require the probability to find the electron anywhere in space to be exactly equal to one. Since this may not be the case for all $\Psi$, we introduce a normalization condition:
 \begin{equation}
 	\int_{- \infty}^{\infty} | \Psi (x,t) |^2 dx = 1
 \end{equation}
@@ -189,184 +167,7 @@ The Time-Independent Schrödinger Equation (TISE)(\ref{eq:TISE}), is an eigenval
 	\Psi(x,t) = \phi(x) \exp\!\left(-\frac{iEt}{\hbar}\right)
 \end{equation}
 
-\section{Classical numerical methods for Schrödinger equation}
-Classical numerical methods for solving the Schrödinger equation work by turning a continuous problem into a form that can be handled by a computer. Some common methods include finite difference and finite element methods, which divide space into small pieces and approximate derivatives. Spectral methods, such as Fourier, Chebyshev, and B-spline methods, instead represent the solution using combinations of known functions. Other useful approaches include the split-step Fourier method and the Crank–Nicolson method, which are often used to simulate how a system changes over time. Monte Carlo methods can also be used, especially for more complex or higher-dimensional problems.
 
-For time-dependent Schrödinger equations, methods like Crank–Nicolson, implicit–explicit schemes, and operator splitting are popular because they are stable and work well for step-by-step time evolution. On the other hand, time-independent problems are usually solved using matrix diagonalization, variational methods, or Monte Carlo techniques to find energy levels and corresponding wave functions.
-
-\subsection{Finite Difference Methods}
-Finite Difference Methods (FDM) are numerical techniques used to approximate solutions to differential equations by discretizing the equations in both time and space. The continuous derivatives in the equations are replaced with finite difference approximations, which transform the problem into a system of algebraic equations that can be solved computationally. FDM is widely used to solve both time-dependent and time-independent forms of the Schrödinger equation.
-
-Discretizing the domain transforms the continuous space and time where the wave function $\Psi (x,t)$ exists into a finite set of specific points called a mesh or grid, because computers cannot handle an infinite continuum of points.
-
-The spatial domain is divided into equally spaced grid points defined as 
-\begin{equation}
-	x_j = j \Delta x \; ; \quad j = 0, 1, 2, \cdots , N
-\end{equation}
-where $\Delta x$ is the spatial step size and determines the resolution of the numerical approximation, with smaller values generally leading to higher accuracy at the expence of increased computaional cost.
-
-Similarly, the time domain is divided into discrete time levels. The time points are defined as 
-\begin{equation}
-	t_n = n \Delta t \; ; \quad n = 0, 1, 2, \cdots
-\end{equation}
-where $\Delta t$ is the time step size and used to evolve the solution from one moment to the next.
-
-After discretization, the continuous wave function $\Psi (x,t)$ is replaced by discrete values evaluated at the grid points. The value of the wave function at position $x_j$ and time $t_n$ is denoted by
-\begin{equation}
-	\Psi_j^n \approx \Psi (x_j, t_n)
-\end{equation}
-At any time step $n$ the entire spatial state can be treated as a vector 
-\begin{equation}
-	U^n = \begin{pmatrix} \Psi_0^n \\ \Psi_1^n \\ \vdots \\ \Psi_N^n \end{pmatrix}
-\end{equation}
-which represents the numerical state of the system at that particular time.
-
-After discretizing the computational domain, the next step in the finite difference method is to approximate the derivatives appearing in the Schrödinger equation. Since numerical algorithms cannot directly evaluate continuous derivatives, these derivatives are replaced by algebraic expressions involving values of the wave function at neighboring grid points. This transformation converts the differential equation into a system of algebraic equations that can be solved using a computer.
-
-The kinetic energy term in the Schrödinger equation contains the second spatial derivative of the wave function. A commonly used approximation is the second-order centered finite difference formula
-\begin{equation}
-	\frac{\partial^2 \Psi}{\partial x^2} \approx \frac{\Psi_{j+1}^n - 2 \Psi_j^n + \Psi_{j-1}^n}{\Delta x^2}
-\end{equation}
-This approximation is second-order accurate, meaning that the truncation error is proportional to $O(\Delta x^2)$. As a resault, reducing the grid spacing improves the accuracy of the numerical solution.
-
-The time derivative of the wave function can also be approximated using finite differences. One of the simplest approximations is the forward difference scheme
-\begin{equation}
-	\frac{\partial \Psi }{\partial t} \approx \frac{\Psi_j^{n+1} - \Psi_j^n}{\Delta t}
-\end{equation}
-For improved accuracy, central difference approximations may be employed. In this case, the derivative is approximated by
-\begin{equation}
-	\frac{\partial \Psi }{\partial t} \approx \frac{\Psi_j^{n+1} - \Psi_j^{n-1}}{2 \Delta t}
-\end{equation}
-
-After discretization and derivative approximation, the finite difference equations must be solved using an appropriate numerical strategy. Several implementation techniques have been developed depending on the type of Schrödinger equation being considered and the desired numerical properties, such as stability, efficiency, and accuracy.
-
-\begin{itemize}
-	\item 
-	Boundary Management:
-\end{itemize}
-For a finite computational domain $\Omega = [a,b]$, Dirichlet boundary conditions impose homogeneous constraints on the wave function $\Psi(a,t) = \Psi(b,t) = 0$. his corresponds to an infinite potential barrier outside $\Omega$, i.e.
-\begin{equation}
-	V(x) = 
-	\begin{cases} 
-		V(x) & \text{if } x \in \Omega \\
-		\infty & \text{if } x \notin \Omega 
-	\end{cases}
-\end{equation}
-To prevent waves from reflecting off the grid edges back into the simulation, an imaginary potential $\mathfrak{Im}(V)$ is added to the Hamiltonian and modifies the continuity equation for probability density $\rho = \Psi \Psi^* = |\Psi|^2$. If $\mathfrak{Im}(V)$ is negative, it acts as a sink, causing the probability density to decay as it enters the sponge region.
-\begin{equation}
-	\frac{\partial \rho}{\partial t} + \nabla \cdot J = 2 \rho \mathfrak{Im}(V)
-\end{equation}
-A typical smooth absorber is constructed using a hyperbolic tangent profile:
-\begin{equation}
-	\mathfrak{Im}(V) = - \frac{1}{2} V_0 \left\{ 2 + \tanh \left( \frac{(r - r_c)}{\delta}  \right) - \tanh (\frac{r_c}{\delta}) \right\}
-\end{equation}
- where $V_0$ is the depth of the well, $r_c$ is the radius where the sponge starts, and $\delta$ is the transition width
-
-For unbounded domains (infinite space), non-local boundary conditions allow waves to exit the domain as if the grid were infinite. These conditions are non-local in time, meaning the value at the boundary at time $t$ depends on the history of the wave function at that point. For a potential $V_-$ outside the boundary at $x=0$, the boundary condition takes the form
-\begin{equation}
-	\partial_x \Psi(0,t) = \sqrt{\frac{2}{\pi}} e^{-i\pi/4} e^{-iV_- t} \frac{d}{dt} \int_0^t \frac{\Psi(0,\tau)e^{iV_- \tau}}{\sqrt{t-\tau}}\, d\tau.
-\end{equation}
-
-A homogeneous Dirichlet boundary condition is a type of essential boundary condition in which the value of the unknown function is prescribed to be zero on the boundary of the computational domain. its mathematically defined as
-\begin{equation}
-	\Psi(a,t) = \Psi(b,t) = 0 \; ; \quad \forall t \geq 0
-\end{equation}
- In the numerical solution of the Schrödinger equation, this condition restricts the wave function to vanish at the boundaries, preventing the particle probability density from existing outside the defined domain.
- 
-\begin{itemize}
-	\item 
-	The Crank-Nicolson Method:
-\end{itemize}
-The Crank–Nicolson method is an implicit finite difference scheme that combines the second-order central difference approximation in space with the trapezoidal rule(dividing the space into a row of trapezoids) in time, resulting in a numerical method that is second-order accurate, unconditionally stable, and preserves the unitary evolution of the quantum wave function.
-
-instead of evaluating the Hamiltonian only at $t_n$ or $t_{n+1}$, the method uses the average
-\begin{equation}
-	H \Psi \approx \frac{1}{2} \left( H \Psi^{n+1} + H \Psi^n \right)
-\end{equation}
-Therefore, the discretized Schrödinger equation becomes
-\begin{equation}
-	i \hbar \frac{\Psi_j^{n+1}-\Psi_j^n}{\Delta t} = \frac{1}{2} \left( H \Psi_j^{n+1} + H \Psi_j^n \right)
-\end{equation}
-This symmetric treatment of the two time levels is the defining characteristic of the Crank–Nicolson method. Unlike other methods, Crank-Nicolson is unconditionally stable for any $r = \frac{\Delta t}{\Delta x^2}$.
-
-\subsection{Finite Element Methods}
-The Finite Element Method (FEM) is a numerical technique that approximates the solution by dividing the domain into a collection of small subdomains called finite elements, and finding an approximate solution using locally defined basis functions. Unlike the Finite Difference Method (FDM), which approximates derivatives directly at discrete grid points, FEM transforms the governing differential equation into its weak (variational) form before discretization. This formulation provides greater flexibility for handling complex geometries, irregular meshes and variable material properties.
-
-Domain discretization is the first step. Let $\Omega \subset \mathbb{R}^d$ where $d=1,2,3$ denote the domain. Such that
-\begin{equation}
-	\bar{\Omega} = \bigcup_{e=1}^{m} \Omega_e
-\end{equation}
-where $\Omega_e$ represents the $e$th finite element and $m$ is the total number of elements. The interiors of any two distinct elements satisfy $\Omega_i \bigcap \Omega_j = \emptyset \quad i \neq j$ ensuring that the mesh completely covers the computational domain without overlap.  In 1D, elements are intervals $[ x_j, x_{j+1}]$, in 2D they are typically triangles or quadrilaterals and in 3D they are tetrahedra or hexahedra (bricks). Elements are interconnected at a finite number $N$ of nodal points $ \{ x_k \}_{k = 1}^N$ situated on their boundaries (and sometimes interiors)
-
-The accuracy of the approximation depends strongly on the quality of the computational mesh. The mesh size is defined by 
-\begin{equation}
-	h = \max_{\Omega \in \tau_h} diam(\Omega) ; \quad diam(\Omega) = \max_{x,y \in \Omega} || x - y ||
-\end{equation}
-where $diam(\Omega)$ is the diameter  of element $\Omega$ in partition $\tau_h$. as the mesh is refined $h \to 0$ the finite element solution converges toward the exact solution. for convergence and numerical stability, the mesh is generally required to satisfy quasi-uniformity conditions, preventing excessively distorted elements. In practical applications involving irregular geometries, unstructured meshes are commonly used because they have better geometric flexibility than structured grids.
-
-After choosing the mesh, a finite-dimensional approximation space is defined. For the Schrödinger equation, this space is typically chosen as $V_h \subset H^1 (\Omega)$ (also known as Sobolev space) where $V_h = span \{ N_1, N_2, \cdots , N_N \}$ (also called shape functions) and each basis function is associated with a single mesh node.
-The shape functions satisfy the interpolation property:
-\begin{equation}
-	N_i (x_j) = \delta_{ij} = 
-		\begin{cases} 
-		1 & \text{if } i = j \\
-		0 & \text{if } i \neq j 
-	\end{cases}
-\end{equation}
-This property guarantees that the nodal coefficients correspond directly to the values of the approximate solution at the mesh nodes. Furthermore, the basis functions satisfy the partition of unity:
-\begin{equation}
-	\sum_{i=1}^N N_i(x) = 1 ; \quad \forall x \in \Omega
-\end{equation}
-
-The continuous wave function is approximated by a finite-dimensional expansion over the chosen basis functions
-\begin{equation}
-	\Psi (x,t) \approx \Psi_h (x,t) = \sum_{i=1}^N N_i(x) \Psi_i (t)
-\end{equation}
-where $N_i(x)$ are the finite element basis functions and $\Psi_i (t)$ are the unknown time-dependent nodal coefficients representing the state of the system at node $i$. This discretization effectively transforms the TDSE into a system of ordinary differential equations in time which can be solved as a system of algebraic equations at each time step.
-
-Instead of requiring the solution to satisfy the Schrödinger equation pointwise, the equation is reformulated as an integral identity over the computational domain. This approach reduces the differentiability requirements on the solution, making it possible to approximate the wave function using piecewise polynomial basis functions.
-
-Let $\Omega \subset \mathbb{R}^{d} (d=1,2,3)$ denote the computational domain with boundary $ \partial\Omega$. The unknown wave function is sought in the Sobolev space
-\begin{equation}
-	H_0^1 (\Omega) = \{ u \in H^1 (\Omega) : u = 0 \quad \text{on} \quad \partial \Omega \}
-\end{equation}
-which consists of square-integrable functions whose first weak derivatives are also square-integrable and which satisfy Dirichlet boundary conditions. To derive the weak formulation let $\chi \in H_0^1(\Omega)$ be an arbitrary complex-valued test function. The core principle is that if the TDSE is satisfied at every point in the domain $\Omega$, then the integral of the equation multiplied by any arbitrary test function must also be zero.
-
-Consider the time-dependent Schrödinger equation
-\begin{equation}
-	i \hbar \frac{\partial\Psi}{\partial t} = - \frac{\hbar^2}{2m} \nabla^2 \Psi + V \Psi + f
-\end{equation}
-where $V(x)$ is the potential function and $f$ denotes a source term. Multiplying the equation by the complex conjugate of the test function $\overline{\chi}$ and integrating over the computational domain yields
-\begin{equation} \label{eq:49}
-	i \hbar \int_{\Omega} \frac{\partial \Psi}{\partial t} \overline{\chi} d \Omega = 
-	- \frac{\hbar^2}{2m} \int_{\Omega} \nabla^2 \Psi \overline{\chi} d \Omega +
-	 \int_{\Omega} V\Psi \overline{\chi} d \Omega +
-	\int_{\Omega} f \overline{\chi} d \Omega
-\end{equation}
-We define the inner product as
-\begin{equation}
-	(u,v) = \int_{\Omega} u \overline{v} d \Omega
-\end{equation}
-The (\ref{eq:49}) equation can be written compactly as
-\begin{equation}
-	i \hbar (\Psi_t, \chi) = - \frac{\hbar^2}{2m} (\nabla^2 \Psi, \chi) + (V \Psi, \chi) + (f, \chi)	
-\end{equation}
-The Laplacian term contains second-order spatial derivatives so we will apply Green’s first identity 
-\begin{equation}
-	\int_{\Omega} \nabla^2 \Psi  \overline{\chi} d \Omega = - \int_{\Omega} \nabla \Psi \cdot \nabla \overline{\chi} d \Omega + \int_{\partial \Omega} \overline{\chi} \frac{\partial \Psi}{\partial n} d \Gamma
-\end{equation}
-where $\frac{\partial \Psi}{\partial n} = \nabla \Psi \cdot \mathbf{n}$ denotes the outward normal derivative on the boundary. Since the test functions satisfy $ \chi=0$ on $\partial \Omega$, the boundary integral vanishes and resulting in
-\begin{equation}
-	\int_{\Omega} \nabla^2 \Psi \overline{\chi} d \Omega = - \int_{\Omega} \nabla \Psi \cdot \nabla \overline{\chi} d \Omega
-\end{equation}
-the second-order derivative acting on the wave function is replaced by first-order derivatives acting on both the trial and test functions. This reduction in derivative order is the defining feature of the weak formulation.
-
-Substituting the results of integration by parts back into the integral statement yields the Weak Solution Formulation:
-Find $\Psi (\cdot, t) \in H_0^1(\Omega)$ such that
-\begin{equation}
-		i \hbar(\Psi_t,\chi) = a(\Psi, \chi) + (f, \chi) ; \quad \forall \chi \in H_0^1(\Omega)
-\end{equation}
-where $ a(\Psi,\chi) = \frac{\hbar^2}{2m} (\nabla \Psi,\nabla \chi) + (V\Psi,\chi)$ is the bilinear form representing the Hamiltonian components. This variational equation forms the mathematical basis for the finite element discretization of the Schrödinger equation.
 
 
 

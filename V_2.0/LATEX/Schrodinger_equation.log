@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.29)  28 JUL 2026 23:18
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.4.29)  29 JUL 2026 22:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -362,6 +362,15 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@olf=\skip70
 \f@nch@O@orf=\skip71
 )
+(/usr/local/texlive/2024/texmf-dist/tex/latex/xfrac/xfrac.sty
+Package: xfrac 2024-02-13 Split-level fractions
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.st
+y
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate-20
+23-10-10.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-02-20 L3 programming layer (loader) 
+
 (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2024-02-20 L3 backend support: XeTeX
 \g__graphics_track_int=\count293
@@ -369,8 +378,27 @@ File: l3backend-xetex.def 2024-02-20 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count294
 \g__pdf_backend_annotation_int=\count295
 \g__pdf_backend_link_int=\count296
-)
-(./Schrodinger_equation.aux)
+))
+Package: xtemplate 2023-10-10 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen174
+\l__xtemplate_tmp_int=\count297
+\l__xtemplate_tmp_muskip=\muskip18
+\l__xtemplate_tmp_skip=\skip72
+))
+\l__xfrac_slash_box=\box55
+\l__xfrac_tmp_box=\box56
+\l__xfrac_denominator_bot_sep_dim=\dimen175
+\l__xfrac_numerator_bot_sep_dim=\dimen176
+\l__xfrac_numerator_top_sep_dim=\dimen177
+\l__xfrac_slash_left_sep_dim=\dimen178
+\l__xfrac_slash_right_sep_dim=\dimen179
+\l__xfrac_slash_left_muskip=\muskip19
+\l__xfrac_slash_right_muskip=\muskip20
+
+Package xtemplate Info: Declaring object type 'xfrac' taking 3 argument(s) on
+(xtemplate)             line 98.
+
+) (./Schrodinger_equation.aux)
 \openout1 = `Schrodinger_equation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -456,22 +484,50 @@ File: images/IUST_Logo.jpg Graphic file (type bmp)
  [1
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Calculating math sizes for size <7.665> on input line 57.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <3.83249> not available
+(Font)              size <5> substituted on input line 57.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.83249> not available
+(Font)              size <5> substituted on input line 57.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.83249> not available
+(Font)              size <5> substituted on input line 57.
+
 File: images/Fig2.png Graphic file (type bmp)
 <images/Fig2.png>
 File: images/Fig5.png Graphic file (type bmp)
 <images/Fig5.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--83
+
+ []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -481,55 +537,53 @@ File: images/Fig3.png Graphic file (type bmp)
 <images/Fig3.png>
 File: images/Fig4.png Graphic file (type bmp)
 <images/Fig4.png>
- [2] [3] [4] [5]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 255
-.
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [6] [7]
-[8]
+ [2] [3]
 File: figures/pinn_framework.png Graphic file (type bmp)
 <figures/pinn_framework.png>
- [9] [10] [11] [12]
+ [4] [5] [6] [7]
 File: figures/SCH_diagram.png Graphic file (type bmp)
 <figures/SCH_diagram.png>
- [13]
+ [8]
 File: figures/figure_1_loss_convergence.png Graphic file (type bmp)
 <figures/figure_1_loss_convergence.png>
 
-Overfull \hbox (4.96428pt too wide) in paragraph at lines 954--955
+Overfull \hbox (4.96428pt too wide) in paragraph at lines 755--756
 []\TU/lmr/m/n/10.95 Close agreement was obtained between the PINN and FDM proba
 bility-density fields through-
  []
 
-[14] [15]
+[9] [10]
 File: figures/figure_2_density_comparison.png Graphic file (type bmp)
 <figures/figure_2_density_comparison.png>
- [16]
+ [11]
 File: figures/figure_3_selected_times.png Graphic file (type bmp)
 <figures/figure_3_selected_times.png>
 File: figures/figure_4_pde_residuals.png Graphic file (type bmp)
 <figures/figure_4_pde_residuals.png>
- [17] [18]
+ [12] [13]
 File: figures/figure_5_probability_conservation.png Graphic file (type bmp)
 <figures/figure_5_probability_conservation.png>
- [19] [20] [21] (./Schrodinger_equation.bbl [22]
-[23]) [24] (./Schrodinger_equation.aux)
+ [14] [15] [16] (./Schrodinger_equation.bbl [17]
+[18]) [19] (./Schrodinger_equation.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 2.90001pt have occurred.
+
 Package rerunfilecheck Info: File `Schrodinger_equation.out' has not changed.
-(rerunfilecheck)             Checksum: D26D775F3EEA116B628A19E1A8156A28;2400.
+(rerunfilecheck)             Checksum: 4C60B001863381E34728E735AC714535;1715.
  ) 
 Here is how much of TeX's memory you used:
- 11995 strings out of 474773
- 192560 string characters out of 5757724
+ 12484 strings out of 474773
+ 207336 string characters out of 5757724
  1942839 words of memory out of 5000000
- 33964 multiletter control sequences out of 15000+600000
- 566675 words of font info for 82 fonts, out of 8000000 for 9000
+ 34439 multiletter control sequences out of 15000+600000
+ 572438 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,14n,79p,844b,472s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 86i,14n,99p,866b,586s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Schrodinger_equation.pdf (25 pages).
+Output written on Schrodinger_equation.pdf (20 pages).
